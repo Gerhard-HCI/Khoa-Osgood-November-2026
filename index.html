@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tokyo · Nov 2026 · Khoa & Stephen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   DESIGN TOKENS — Japan autumn palette
+   ═══════════════════════════════════════════════════════ */
+:root {
+  --ink:       #1a1612;
+  --ink2:      #3d3530;
+  --ink3:      #6b5f58;
+  --mist:      #f5f2ee;
+  --paper:     #faf8f5;
+  --warm:      #fff9f2;
+  --gold:      #b8892a;
+  --gold-lt:   #e8c96a;
+  --red:       #c0392b;
+  --red-lt:    #f9ecea;
+  --sage:      #4a7c59;
+  --sage-lt:   #eef4f0;
+  --amber:     #d4861a;
+  --amber-lt:  #fdf3e3;
+  --border:    rgba(184,137,42,0.18);
+  --shadow:    0 2px 20px rgba(26,22,18,0.08);
+  --shadow-lg: 0 8px 40px rgba(26,22,18,0.12);
+  --radius:    14px;
+  --font-disp: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ═══ RESET & BASE ═══ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ═══ HEADER ═══ */
+#sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,245,0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px 10px;
+}
+.header-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.header-title {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.header-title span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.header-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+#live-clock {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+#trip-day-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 20px;
+  text-align: center;
+}
+.hero-logo {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: var(--font-disp);
+  font-size: clamp(38px, 10vw, 52px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.hero-subtitle {
+  font-family: var(--font-disp);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink3);
+  margin-bottom: 18px;
+}
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink3);
+  letter-spacing: 0.04em;
+}
+.hero-meta-item strong {
+  color: var(--ink2);
+  font-weight: 500;
+}
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 20px auto;
+}
+
+/* ═══ TABS ═══ */
+.tab-bar {
+  position: sticky;
+  top: 66px;
+  z-index: 90;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.tab-bar-inner {
+  display: flex;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 12px 16px 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ═══ MAIN CONTENT ═══ */
+.tab-panel { display: none; padding: 0 0 40px; }
+.tab-panel.active { display: block; }
+.content-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ═══ ALERT BANNER ═══ */
+.alert-banner {
+  background: linear-gradient(135deg, var(--red-lt), #fdf0ee);
+  border: 1px solid rgba(192,57,43,0.2);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 16px 16px 0;
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alert-banner-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.alert-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink2);
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(192,57,43,0.08);
+}
+.alert-item:last-child { border-bottom: none; }
+.alert-venue { font-weight: 500; color: var(--ink); }
+.alert-dot { color: var(--red); font-size: 16px; line-height: 1; flex-shrink: 0; }
+
+/* ═══ DAY CARDS ═══ */
+.day-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 14px 16px 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.day-card.today {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), var(--shadow-lg);
+}
+
+.day-card-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  gap: 14px;
+  position: relative;
+}
+.day-num {
+  font-family: var(--font-disp);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+.day-info { flex: 1; min-width: 0; }
+.day-weekday {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink3);
+  margin-bottom: 2px;
+}
+.day-theme {
+  font-family: var(--font-disp);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.day-city-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-top: 4px;
+  display: inline-block;
+  letter-spacing: 0.04em;
+  background: var(--amber-lt);
+  color: var(--amber);
+}
+.today-badge {
+  position: absolute;
+  top: 12px;
+  right: 46px;
+  background: var(--gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.day-chevron {
+  font-size: 14px;
+  color: var(--ink3);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.day-card.open .day-chevron { transform: rotate(180deg); }
+
+/* ═══ DAY BODY ═══ */
+.day-body {
+  display: none;
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--border);
+}
+.day-card.open .day-body { display: block; }
+
+/* hotel strip */
+.hotel-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--mist);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  margin-top: 14px;
+}
+.hotel-strip-icon { font-size: 16px; flex-shrink: 0; }
+.hotel-strip-info { flex: 1; min-width: 0; }
+.hotel-strip-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+.hotel-strip-sub { font-size: 11px; color: var(--ink3); margin-top: 1px; }
+.hotel-strip-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.micro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--ink2);
+}
+.micro-btn:active { background: var(--mist); transform: scale(0.95); }
+
+/* day notes */
+.day-note {
+  font-size: 12.5px;
+  color: var(--ink3);
+  line-height: 1.6;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+/* ═══ STOPS TIMELINE ═══ */
+.period-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  padding: 10px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.period-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.stop {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(184,137,42,0.08);
+  position: relative;
+}
+.stop:last-child { border-bottom: none; padding-bottom: 0; }
+
+.stop-time {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink3);
+  width: 40px;
+  flex-shrink: 0;
+  padding-top: 1px;
+  letter-spacing: 0.02em;
+}
+.stop-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid white;
+  margin-top: 5px;
+  flex-shrink: 0;
+  position: relative;
+}
+.stop-dot.dinner  { background: var(--red); }
+.stop-dot.lunch   { background: var(--amber); }
+.stop-dot.activity{ background: var(--sage); }
+.stop-dot.transport { background: var(--ink3); }
+.stop-dot.logistics { background: var(--gold); }
+.stop-dot.flight  { background: var(--ink); }
+
+.stop-content { flex: 1; min-width: 0; }
+.stop-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+.stop-subtitle {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-bottom: 5px;
+}
+.stop-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.badge-michelin { background: #e8eef8; color: #2c5282; }
+.badge-confirmed { background: var(--sage-lt); color: var(--sage); }
+.badge-tbc { background: var(--amber-lt); color: var(--amber); }
+.badge-cash { background: #f0f0ee; color: var(--ink3); }
+.badge-priority { background: var(--red-lt); color: var(--red); }
+.badge-repeat { background: linear-gradient(135deg, #f3e8ff, #fce7f3); color: #7c3aed; }
+.badge-nofrag { background: #fff7ed; color: #c2410c; }
+
+.stop-note {
+  font-size: 12px;
+  color: var(--ink3);
+  line-height: 1.55;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.stop-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: var(--mist);
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.action-btn:active { background: #ede8e0; transform: scale(0.97); }
+.action-btn.primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: white;
+}
+.action-btn.primary:active { background: #a07820; }
+
+/* ═══ UTILITIES TAB ═══ */
+.util-section {
+  padding: 20px 0 0;
+}
+.util-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.util-card-head {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.util-card-head-icon { font-size: 18px; }
+.util-card-head-title {
+  font-family: var(--font-disp);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.util-card-body { padding: 14px 18px; }
+
+/* currency */
+.currency-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.currency-input-wrap {
+  flex: 1;
+  position: relative;
+}
+.currency-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 4px;
+}
+.currency-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--mist);
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.currency-input:focus { border-color: var(--gold); background: white; }
+.currency-sym {
+  font-family: var(--font-disp);
+  font-size: 24px;
+  color: var(--ink3);
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+.currency-rate-note {
+  font-size: 11px;
+  color: var(--ink3);
+  text-align: center;
+  margin-top: 4px;
+}
+.currency-rate-note span {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* info list */
+.info-list { list-style: none; }
+.info-item {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.info-item:last-child { border-bottom: none; }
+.info-icon { font-size: 14px; flex-shrink: 0; }
+.info-text { font-size: 13px; color: var(--ink2); line-height: 1.5; }
+.info-text strong { color: var(--ink); font-weight: 500; }
+
+/* restaurant notes */
+.rest-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rest-item:last-child { border-bottom: none; }
+.rest-name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.rest-note { font-size: 12.5px; color: var(--ink3); line-height: 1.5; }
+
+/* ═══ EMERGENCY TAB ═══ */
+.emergency-hero {
+  text-align: center;
+  padding: 24px 16px 20px;
+}
+.emergency-hero-title {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.emergency-hero-sub {
+  font-size: 12px;
+  color: var(--ink3);
+}
+.sos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.sos-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 10px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.15s;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sos-btn:active { transform: scale(0.97); }
+.sos-btn.police { background: #1e3a8a; color: white; }
+.sos-btn.ambulance { background: var(--red); color: white; }
+.sos-btn.hc { background: var(--gold); color: white; }
+.sos-btn.hotel { background: white; color: var(--ink); border: 1px solid var(--border); }
+.sos-btn-icon { font-size: 22px; }
+.sos-btn-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.sos-btn-number { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.etiquette-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+}
+.etiquette-item:last-child { border-bottom: none; }
+.etiquette-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.etiquette-content {}
+.etiquette-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.etiquette-desc { font-size: 12px; color: var(--ink3); line-height: 1.55; }
+
+/* ═══ FOOTER ═══ */
+.app-footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 20px 8px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+}
+.app-footer a { color: var(--gold); text-decoration: none; }
+
+/* ═══ ANIMATE IN ═══ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.day-card { animation: fadeUp 0.4s ease both; }
+.day-card:nth-child(2) { animation-delay: 0.04s; }
+.day-card:nth-child(3) { animation-delay: 0.08s; }
+.day-card:nth-child(4) { animation-delay: 0.12s; }
+.day-card:nth-child(5) { animation-delay: 0.16s; }
+.day-card:nth-child(6) { animation-delay: 0.20s; }
+.day-card:nth-child(7) { animation-delay: 0.24s; }
+.day-card:nth-child(8) { animation-delay: 0.28s; }
+
+/* ═══ WEATHER ═══ */
+.weather-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: linear-gradient(135deg, #f0f7ff, #e8f4ff);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--ink2);
+}
+.weather-icon { font-size: 18px; }
+.weather-temps { font-weight: 500; }
+.weather-desc { color: var(--ink3); }
+.weather-tbc { color: var(--ink3); font-style: italic; }
+
+/* ═══ UTILITY: copy toast ═══ */
+#copy-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: white;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 999;
+  white-space: nowrap;
+}
+#copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (min-width: 600px) {
+  .sos-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ═══ STICKY HEADER ═══ -->
+
+<header id="sticky-header">
+  <div class="header-inner">
+    <div class="header-title">
+      <span>Happy Camper</span>
+      Tokyo · Nov 2026
+    </div>
+    <div class="header-right">
+      <div id="live-clock">—</div>
+      <div id="trip-day-badge">Loading…</div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+
+<div class="hero">
+  <div class="hero-logo">Happy Camper · Private Travel</div>
+  <div class="hero-title">Tokyo</div>
+  <div class="hero-subtitle">A Private Journey · November 2026</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">🗓 <strong>8 – 15 Nov 2026</strong></div>
+    <div class="hero-meta-item">👥 <strong>Four Guests</strong></div>
+    <div class="hero-meta-item">✈️ <strong>Haneda (HND)</strong></div>
+  </div>
+  <div class="hero-divider"></div>
+  <div style="font-family: var(--font-disp); font-size: 20px; color: var(--ink2); font-weight: 300;">
+    Khoa Le &amp; Stephen Osgood
+  </div>
+  <div style="font-size: 12px; color: var(--ink3); margin-top: 4px; font-style: italic;">and Guests</div>
+</div>
+
+<!-- ═══ TABS ═══ -->
+
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" onclick="switchTab('itinerary', this)">Itinerary</button>
+    <button class="tab-btn" onclick="switchTab('utilities', this)">Utilities</button>
+    <button class="tab-btn" onclick="switchTab('emergency', this)">Emergency</button>
+  </div>
+</div>
+
+<div id="copy-toast">Copied ✓</div>
+
+<!-- ═══════════════════════════════════════
+     TAB: ITINERARY
+════════════════════════════════════════ -->
+
+<div id="tab-itinerary" class="tab-panel active">
+
+  <!-- booking alerts -->
+
+  <div class="alert-banner" style="margin-top:16px;">
+    <div class="alert-banner-title">⚠️ Booking Notes</div>
+    <div class="alert-item"><span class="alert-dot">•</span><span class="alert-venue">Sushi Saito</span><span style="margin-left:6px;color:var(--ink3);font-size:12px;">Priority pursuit — 5 seats. Confirm ASAP.</span></div>
+    <div class="alert-item"><span class="alert-dot">•</span><span class="alert-venue">Matsukawa · Amamoto · Mitei</span><span style="margin-left:6px;color:var(--ink3);font-size:12px;">Active pursuit — confirm via WhatsApp.</span></div>
+    <div class="alert-item"><span class="alert-dot">•</span><span class="alert-venue">All omakase counters</span><span style="margin-left:6px;color:var(--ink3);font-size:12px;">No perfume or fragrance — critical.</span></div>
+    <div class="alert-item"><span class="alert-dot">•</span><span class="alert-venue">Several restaurants</span><span style="margin-left:6px;color:var(--ink3);font-size:12px;">Cash only — carry sufficient yen.</span></div>
+  </div>
+
+  <!-- ── Day cards rendered by JS ── -->
+
+  <div id="days-container" style="padding-bottom: 10px;"></div>
+
+</div><!-- /tab-itinerary -->
+
+<!-- ═══════════════════════════════════════
+     TAB: UTILITIES
+════════════════════════════════════════ -->
+
+<div id="tab-utilities" class="tab-panel">
+  <div class="content-wrap util-section">
+
+```
+<!-- Currency -->
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">💴</div>
+    <div class="util-card-head-title">JPY ↔ USD Converter</div>
+  </div>
+  <div class="util-card-body">
+    <div class="currency-row">
+      <div class="currency-input-wrap">
+        <div class="currency-label">Japanese Yen ¥</div>
+        <input class="currency-input" id="jpy-input" type="number" inputmode="decimal" placeholder="10000" oninput="convertFromJPY(this.value)">
+      </div>
+      <div class="currency-sym" style="margin-top:16px;">⇌</div>
+      <div class="currency-input-wrap">
+        <div class="currency-label">US Dollars $</div>
+        <input class="currency-input" id="usd-input" type="number" inputmode="decimal" placeholder="—" oninput="convertFromUSD(this.value)">
+      </div>
+    </div>
+    <div class="currency-rate-note">Rate: <span id="fx-rate-display">150</span> ¥ per $1 USD · <a href="#" onclick="promptFxRate(event)" style="color:var(--gold);">Update rate</a></div>
+  </div>
+</div>
+
+<!-- Restaurant tracker -->
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">🍽</div>
+    <div class="util-card-head-title">Restaurant Tracker</div>
+  </div>
+  <div class="util-card-body" style="padding: 8px 18px 14px;">
+    <div class="rest-item">
+      <div class="rest-name">Sushi Ikko <span class="badge badge-confirmed" style="margin-left:4px;">Confirmed</span></div>
+      <div class="rest-note">Tue 10 Nov · Dinner 20:30 · Repeat favourite</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Naruse <span class="badge badge-confirmed" style="margin-left:4px;">Confirmed</span></div>
+      <div class="rest-note">Wed 11 Nov · Lunch 12:30 · Strong programme anchor</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Sushi Saito <span class="badge badge-priority" style="margin-left:4px;">Priority Pursuit</span></div>
+      <div class="rest-note">Fri 13 Nov · Lunch 12:00 · 5 seats · Top priority</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Atami <span class="badge badge-confirmed" style="margin-left:4px;">Confirmed</span></div>
+      <div class="rest-note">Sun 15 Nov · Lunch · Final day anchor</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">RestoPizza <span class="badge badge-confirmed" style="margin-left:4px;">Confirmed</span></div>
+      <div class="rest-note">Day TBC · Important tonal counterpoint to formal sushi</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Meino · Suetomi <span class="badge badge-repeat" style="margin-left:4px;">Repeat</span></div>
+      <div class="rest-note">Active pursuit for placement · Days TBC</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Matsukawa · Amamoto · Mitei <span class="badge badge-tbc" style="margin-left:4px;">Pursuit</span></div>
+      <div class="rest-note">Active priority targets · Thu 12 dinner + additional days</div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-name">Arai</div>
+      <div class="rest-note">Wishlist — will pursue as programme develops</div>
+    </div>
+  </div>
+</div>
+
+<!-- Japan travel notes -->
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">🗾</div>
+    <div class="util-card-head-title">Travel Notes</div>
+  </div>
+  <div class="util-card-body" style="padding: 4px 18px 14px;">
+    <ul class="info-list">
+      <li class="info-item"><span class="info-icon">🚇</span><span class="info-text"><strong>Suica:</strong> Add to Apple/Google Wallet. Tap your phone at any gate. Top up via linked card.</span></li>
+      <li class="info-item"><span class="info-icon">💴</span><span class="info-text"><strong>Cash:</strong> Japan is cash-based at this dining level. Use 7-Eleven or Japan Post ATMs (accept international cards).</span></li>
+      <li class="info-item"><span class="info-icon">📱</span><span class="info-text"><strong>eSIM:</strong> Activate before landing. Airalo, HolaFly, or YO recommended for Japan coverage.</span></li>
+      <li class="info-item"><span class="info-icon">🕐</span><span class="info-text"><strong>Time Zone:</strong> JST = UTC+9. No daylight saving. November in Tokyo is crisp and clear.</span></li>
+      <li class="info-item"><span class="info-icon">💡</span><span class="info-text"><strong>Electricity:</strong> 100V · 50/60Hz · Two-pronged sockets. European guests need a voltage converter.</span></li>
+      <li class="info-item"><span class="info-icon">🌸</span><span class="info-text"><strong>November:</strong> Autumn foliage season — maples and ginkgo trees at their peak. Comfortable cool weather, excellent visibility.</span></li>
+      <li class="info-item"><span class="info-icon">📞</span><span class="info-text"><strong>Happy Camper:</strong> +81 90 6158 9006 · hello@happycamper.food</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Dining etiquette -->
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">🍣</div>
+    <div class="util-card-head-title">Dining Etiquette</div>
+  </div>
+  <div class="util-card-body" style="padding: 4px 18px 14px;">
+    <div class="etiquette-item">
+      <div class="etiquette-icon">🚫</div>
+      <div class="etiquette-content">
+        <div class="etiquette-title">No Fragrance — Critical</div>
+        <div class="etiquette-desc">No perfume, cologne, scented hair products, or strongly fragranced detergents on any omakase dining day. This is the single most important etiquette point.</div>
+      </div>
+    </div>
+    <div class="etiquette-item">
+      <div class="etiquette-icon">⏰</div>
+      <div class="etiquette-content">
+        <div class="etiquette-title">Punctuality</div>
+        <div class="etiquette-desc">Omakase meals begin simultaneously for all guests. Arrive early. Many of Tokyo's finest restaurants are in quiet streets — allow generous transfer time.</div>
+      </div>
+    </div>
+    <div class="etiquette-item">
+      <div class="etiquette-icon">💴</div>
+      <div class="etiquette-content">
+        <div class="etiquette-title">Cash</div>
+        <div class="etiquette-desc">Several restaurants at this programme level are cash only. Carry sufficient yen at all times. ATMs at 7-Eleven and Japan Post.</div>
+      </div>
+    </div>
+    <div class="etiquette-item">
+      <div class="etiquette-icon">⌚</div>
+      <div class="etiquette-content">
+        <div class="etiquette-title">Counter Etiquette</div>
+        <div class="etiquette-desc">Remove rings, bracelets, and watches at sushi counters — often made from precious single-piece hinoki cypress. Tipping not expected; say "Gochisousama deshita."</div>
+      </div>
+    </div>
+    <div class="etiquette-item">
+      <div class="etiquette-icon">🔕</div>
+      <div class="etiquette-content">
+        <div class="etiquette-title">Reservations are Firm</div>
+        <div class="etiquette-desc">Once secured, reservations are commitments. Happy Camper's access is built on years of trust. Cancellations damage relationships built over many seasons.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- programme cost -->
+<div class="util-card" style="background: linear-gradient(135deg, #fffdf8, #faf6ee);">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">📋</div>
+    <div class="util-card-head-title">Programme Investment</div>
+  </div>
+  <div class="util-card-body">
+    <ul class="info-list">
+      <li class="info-item" style="padding:6px 0;"><span class="info-icon">·</span><span class="info-text">Arrangement Fee (Planning &amp; Booking) — <strong>$10,000</strong></span></li>
+      <li class="info-item" style="padding:6px 0;"><span class="info-icon">·</span><span class="info-text">Hosting Fee (6 Dedicated Days) — <strong>$9,000</strong></span></li>
+      <li class="info-item" style="padding:6px 0;"><span class="info-icon">·</span><span class="info-text">Estimated Itemised Costs (Dining &amp; Movement) — <strong>$32,000</strong></span></li>
+      <li class="info-item" style="padding:10px 0 4px; border-top: 1px solid var(--gold); margin-top: 4px;"><span class="info-icon">✦</span><span class="info-text" style="font-weight:500; color:var(--gold); font-size:15px;">Total Agreed Price — USD 51,000</span></li>
+    </ul>
+    <div style="font-size:11px; color:var(--ink3); margin-top:8px; line-height:1.6;">Excludes: international flights, hotel accommodation, alcohol &amp; beverages, personal expenses.</div>
+  </div>
+</div>
+```
+
+  </div>
+</div><!-- /tab-utilities -->
+
+<!-- ═══════════════════════════════════════
+     TAB: EMERGENCY
+════════════════════════════════════════ -->
+
+<div id="tab-emergency" class="tab-panel">
+  <div class="content-wrap">
+
+```
+<div class="emergency-hero">
+  <div class="emergency-hero-title">Emergency Contacts</div>
+  <div class="emergency-hero-sub">Tokyo · Japan · November 2026</div>
+</div>
+
+<div class="sos-grid">
+  <a href="tel:110" class="sos-btn police">
+    <div class="sos-btn-icon">🚔</div>
+    <div class="sos-btn-label">Police</div>
+    <div class="sos-btn-number">110</div>
+  </a>
+  <a href="tel:119" class="sos-btn ambulance">
+    <div class="sos-btn-icon">🚑</div>
+    <div class="sos-btn-label">Ambulance</div>
+    <div class="sos-btn-number">119</div>
+  </a>
+  <a href="tel:+819061589006" class="sos-btn hc">
+    <div class="sos-btn-icon">🎒</div>
+    <div class="sos-btn-label">Happy Camper</div>
+    <div class="sos-btn-number" style="font-size:13px;">+81 90 6158</div>
+  </a>
+  <a href="tel:+81357913931" class="sos-btn hotel">
+    <div class="sos-btn-icon">🏨</div>
+    <div class="sos-btn-label">Hotel Front</div>
+    <div class="sos-btn-number" style="font-size:13px;">Confirm on</div>
+  </a>
+</div>
+
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">🏥</div>
+    <div class="util-card-head-title">Medical — Tokyo</div>
+  </div>
+  <div class="util-card-body">
+    <ul class="info-list">
+      <li class="info-item"><span class="info-icon">🏥</span><span class="info-text"><strong>St. Luke's International Hospital</strong> — English-speaking · <a href="tel:+81355507166" style="color:var(--gold);">+81 3 5550 7166</a></span></li>
+      <li class="info-item"><span class="info-icon">🏥</span><span class="info-text"><strong>Tokyo Midtown Medical Center</strong> — English staff · <a href="tel:+81345693000" style="color:var(--gold);">+81 3 5413 0080</a></span></li>
+      <li class="info-item"><span class="info-icon">💊</span><span class="info-text">Japan has an excellent healthcare system. Translation support available at major hospitals in Tokyo.</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">✈️</div>
+    <div class="util-card-head-title">Departure Details</div>
+  </div>
+  <div class="util-card-body">
+    <ul class="info-list">
+      <li class="info-item"><span class="info-icon">📅</span><span class="info-text"><strong>Departure:</strong> 00:05 Monday 16 November 2026 · Haneda (HND)</span></li>
+      <li class="info-item"><span class="info-icon">🛫</span><span class="info-text"><strong>Destination:</strong> Dubai</span></li>
+      <li class="info-item"><span class="info-icon">🕛</span><span class="info-text">Late-night departure — final dinner on 15 Nov then transfer to airport</span></li>
+      <li class="info-item"><span class="info-icon">🚖</span><span class="info-text">Transfer from dinner venue to Haneda arranged as part of programme logistics</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="util-card">
+  <div class="util-card-head">
+    <div class="util-card-head-icon">🗣</div>
+    <div class="util-card-head-title">Japanese Phrases</div>
+  </div>
+  <div class="util-card-body">
+    <ul class="info-list">
+      <li class="info-item"><span class="info-icon">🙏</span><span class="info-text"><strong>Arigatou gozaimasu</strong> — Thank you very much</span></li>
+      <li class="info-item"><span class="info-icon">🍽</span><span class="info-text"><strong>Gochisousama deshita</strong> — Thank you for the meal (use at end of dinner)</span></li>
+      <li class="info-item"><span class="info-icon">🚨</span><span class="info-text"><strong>Tasukete kudasai!</strong> — Please help me!</span></li>
+      <li class="info-item"><span class="info-icon">🏥</span><span class="info-text"><strong>Byouin wa doko desu ka?</strong> — Where is the hospital?</span></li>
+      <li class="info-item"><span class="info-icon">📍</span><span class="info-text"><strong>Sumimasen</strong> — Excuse me / Pardon me</span></li>
+    </ul>
+  </div>
+</div>
+```
+
+  </div>
+</div><!-- /tab-emergency -->
+
+<!-- ═══ FOOTER ═══ -->
+
+<footer class="app-footer">
+  <div>Happy Camper Ltd. · <a href="mailto:hello@happycamper.food">hello@happycamper.food</a> · <a href="tel:+819061589006">+81 90 6158 9006</a></div>
+  <div style="margin-top:4px; color: rgba(107,95,88,0.5);">Tokyo · Kyoto · London</div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   CONFIGURATION
+   ─────────────────────────────────────────────────────
+   WEATHER: Uses Open-Meteo (free, no API key required).
+   MAPS:    Uses Google Maps search links — no key needed.
+═══════════════════════════════════════════════════════ */
+
+// ── CURRENCY ─────────────────────────────────────────
+// Approximate rate. Update or implement live-rate fetch.
+let FX_RATE = 150; // 1 USD ≈ 150 JPY
+
+// ── TRIP DATA MODEL ──────────────────────────────────
+// Edit stops, times, notes, badges, etc. below.
+const TRIP = {
+  title:     "Tokyo",
+  guests:    "Khoa Le & Stephen Osgood",
+  operator:  "Happy Camper Ltd.",
+  contact:   "+81 90 6158 9006",
+  email:     "hello@happycamper.food",
+  startDate: "2026-11-08",
+  endDate:   "2026-11-15",
+  travelers: 4,
+
+  emergency: {
+    police:       "110",
+    ambulance:    "119",
+    happyCamper:  "+81 90 6158 9006",
+    hospital:     "St. Luke's International +81 3 5550 7166"
+  },
+
+  // ─── DAYS ─────────────────────────────────────────
+  // Each day: date, dayNum, weekday, city, hotel, theme,
+  //           notes?, weatherCity, stops[]
+  //
+  // STOP FIELDS:
+  //   time, period (morning|afternoon|evening),
+  //   type (dinner|lunch|activity|transport|logistics|flight),
+  //   title, subtitle, locationName, address, mapsQuery,
+  //   notes, badges[]
+  //   badge values: confirmed, tbc, michelin, cash,
+  //                 priority, repeat, nofrag
+  // ──────────────────────────────────────────────────
+  days: [
+    /* ─── DAY 1 · Sun 8 November ─── */
+    {
+      date: "2026-11-08", dayNum: 1,
+      weekday: "Sunday, 8 November",
+      city: "Tokyo", theme: "Arrival",
+      hotel: "Tokyo — Hotel TBC",
+      hotelMapsQuery: "luxury hotel Tokyo Minato",
+      notes: "Arrival day. Private transfer from Haneda on arrival. WhatsApp group active for direct communication throughout. Priority: settle in, rest. Dinner will be part of the week's broader structure.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "15:05", period: "afternoon",
+          type: "flight",
+          title: "Arrive — Haneda Airport (HND)",
+          subtitle: "Private transfer to hotel on arrival",
+          locationName: "Haneda Airport Tokyo",
+          address: "Haneda Airport, Ota City, Tokyo",
+          mapsQuery: "Haneda Airport Tokyo HND",
+          notes: "Private car will be waiting. Allow 30–50 min transfer to central Tokyo depending on traffic.",
+          badges: []
+        },
+        {
+          time: "~16:30", period: "afternoon",
+          type: "transport",
+          title: "Transfer to Hotel",
+          subtitle: "Private car · Hotel details TBC",
+          locationName: "Hotel Tokyo",
+          address: "Tokyo",
+          mapsQuery: "The Okura Tokyo",
+          notes: "Hotel details to be confirmed. WhatsApp group active for any updates on arrival day.",
+          badges: ["tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 2 · Mon 9 November ─── */
+    {
+      date: "2026-11-09", dayNum: 2,
+      weekday: "Monday, 9 November",
+      city: "Tokyo", theme: "A Full Dining Day",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Both lunch and dinner being actively pursued. Options will be presented via WhatsApp for approval.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "~13:00", period: "afternoon",
+          type: "lunch",
+          title: "Lunch — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Will be proposed via WhatsApp group once suitable choices are ready for review.",
+          badges: ["tbc"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Dinner — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Dinner options being developed at the right level. Will be shared for approval.",
+          badges: ["tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 3 · Tue 10 November ─── */
+    {
+      date: "2026-11-10", dayNum: 3,
+      weekday: "Tuesday, 10 November",
+      city: "Tokyo", theme: "Sushi Ikko",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Sushi Ikko confirmed for dinner — one of the programme's most meaningful repeat anchors.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "~13:00", period: "afternoon",
+          type: "lunch",
+          title: "Lunch — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Lunch being shaped as the rest of the week develops.",
+          badges: ["tbc"]
+        },
+        {
+          time: "20:30", period: "evening",
+          type: "dinner",
+          title: "Sushi Ikko",
+          subtitle: "Tokyo · Dinner",
+          locationName: "Sushi Ikko",
+          address: "Tokyo, Japan",
+          mapsQuery: "Sushi Ikko Tokyo",
+          notes: "A restaurant the group knows well, has greatly enjoyed, and specifically wishes to revisit. The repeat request reflects the strength of the prior experience and the group's confidence in returning.",
+          badges: ["confirmed", "repeat", "nofrag"]
+        }
+      ]
+    },
+
+    /* ─── DAY 4 · Wed 11 November ─── */
+    {
+      date: "2026-11-11", dayNum: 4,
+      weekday: "Wednesday, 11 November",
+      city: "Tokyo", theme: "Naruse",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Naruse confirmed for lunch — one of the week's key anchors. Dinner: two directions under consideration (Shizuoka or Tokyo) — final decision once broader booking picture is clearer.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "12:30", period: "afternoon",
+          type: "lunch",
+          title: "Naruse",
+          subtitle: "Tokyo · Lunch",
+          locationName: "Naruse",
+          address: "Tokyo, Japan",
+          mapsQuery: "Naruse restaurant Tokyo",
+          notes: "One of the key confirmed lunch anchors of the week. Fits the level and tone of the programme extremely well — a serious, high-quality daytime experience.",
+          badges: ["confirmed"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Dinner — Two Directions Under Consideration",
+          subtitle: "Shizuoka (Shinkansen) or Tokyo",
+          locationName: "Tokyo / Shizuoka",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Option A: Dinner in Shizuoka followed by Shinkansen return to Tokyo. Option B: Dinner in Tokyo. Final decision once the week's pace and booking picture is clearer — to be presented via WhatsApp.",
+          badges: ["tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 5 · Thu 12 November ─── */
+    {
+      date: "2026-11-12", dayNum: 5,
+      weekday: "Thursday, 12 November",
+      city: "Tokyo", theme: "Full Dining Day",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Dinner targets: Matsukawa, Amamoto, Mitei — each a major potential highlight if access secured.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "~13:00", period: "afternoon",
+          type: "lunch",
+          title: "Lunch — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Will be shared for discussion and approval as suitable choices become available.",
+          badges: ["tbc"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Dinner — Matsukawa · Amamoto · Mitei",
+          subtitle: "Active priority pursuits",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Matsukawa restaurant Tokyo",
+          notes: "Active targets include Matsukawa, Amamoto, and Mitei — each representing an important and ambitious moment. Options presented for approval before any reservation is confirmed.",
+          badges: ["priority", "tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 6 · Fri 13 November ─── */
+    {
+      date: "2026-11-13", dayNum: 6,
+      weekday: "Friday, 13 November",
+      city: "Tokyo", theme: "Sushi Saito",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Sushi Saito — the great aspirational pillar of the programme. If secured, it stands as the defining meal of the entire week.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "12:00", period: "afternoon",
+          type: "lunch",
+          title: "Sushi Saito",
+          subtitle: "Tokyo · 5 seats preferred",
+          locationName: "Sushi Saito",
+          address: "Tokyo, Japan",
+          mapsQuery: "Sushi Saito Tokyo",
+          notes: "One of the great aspirational pillars of this programme. If secured, it would stand as one of the headline meals of the entire week — representing both the ambition of the itinerary and the quality of access that makes this programme possible. Access requires patience, relationship, and timing. Top priority pursuit.",
+          badges: ["priority", "nofrag"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Dinner — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Dinner options being pursued — will be shared for input and approval as the programme develops.",
+          badges: ["tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 7 · Sat 14 November ─── */
+    {
+      date: "2026-11-14", dayNum: 7,
+      weekday: "Saturday, 14 November",
+      city: "Tokyo", theme: "Full Dining Day",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Repeat targets Meino and Suetomi remain active priorities for placement across remaining days.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "~13:00", period: "afternoon",
+          type: "lunch",
+          title: "Lunch — To Be Confirmed",
+          subtitle: "Options under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Aim: right rhythm and variety, building on what has already been experienced while keeping final days fresh and strong.",
+          badges: ["tbc"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Dinner — Meino · Suetomi",
+          subtitle: "Repeat favourites under active pursuit",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Meino restaurant Tokyo",
+          notes: "Meino and Suetomi are both repeat requests based on prior success and clear affection for the experience. Being actively pursued for placement.",
+          badges: ["repeat", "tbc"]
+        }
+      ]
+    },
+
+    /* ─── DAY 8 · Sun 15 November ─── */
+    {
+      date: "2026-11-15", dayNum: 8,
+      weekday: "Sunday, 15 November",
+      city: "Tokyo", theme: "Final Day · Departure",
+      hotel: "Tokyo",
+      hotelMapsQuery: "luxury hotel Tokyo",
+      notes: "Designed as a complete final culinary day. Late-night departure gives the full day for dining. Transfer to Haneda arranged from final dinner venue.",
+      weatherCity: "Tokyo",
+      stops: [
+        {
+          time: "~13:00", period: "afternoon",
+          type: "lunch",
+          title: "Atami",
+          subtitle: "Tokyo · Final Lunch",
+          locationName: "Atami Tokyo",
+          address: "Tokyo, Japan",
+          mapsQuery: "Atami restaurant Tokyo",
+          notes: "A considered and appropriate close to the week's dining sequence. The anchor for the final midday meal of the programme.",
+          badges: ["confirmed"]
+        },
+        {
+          time: "~19:30", period: "evening",
+          type: "dinner",
+          title: "Final Dinner — To Be Confirmed",
+          subtitle: "Options being planned",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "best restaurant Tokyo",
+          notes: "Trip designed to conclude as a complete culinary day. Options will be shared via WhatsApp for approval.",
+          badges: ["tbc"]
+        },
+        {
+          time: "~22:30", period: "evening",
+          type: "transport",
+          title: "Transfer to Haneda Airport",
+          subtitle: "Private car from dinner venue",
+          locationName: "Haneda Airport Tokyo",
+          address: "Haneda Airport, Ota City, Tokyo",
+          mapsQuery: "Haneda Airport Tokyo HND terminal",
+          notes: "Transfer arranged as part of programme logistics. Flight departs 00:05 Monday 16 November.",
+          badges: []
+        },
+        {
+          time: "00:05", period: "evening",
+          type: "flight",
+          title: "Depart Haneda (HND) → Dubai",
+          subtitle: "Monday 16 November · 00:05",
+          locationName: "Haneda Airport",
+          address: "Haneda Airport, Ota City, Tokyo",
+          mapsQuery: "Haneda Airport Tokyo HND",
+          notes: "Departure to Dubai.",
+          badges: []
+        }
+      ]
+    }
+  ] // end days
+}; // end TRIP
+
+
+/* ═══════════════════════════════════════
+   RENDERING ENGINE
+════════════════════════════════════════ */
+
+// Badge display map
+const BADGE_MAP = {
+  confirmed: { cls: 'badge-confirmed', label: 'Confirmed' },
+  tbc:       { cls: 'badge-tbc',       label: 'TBC' },
+  michelin:  { cls: 'badge-michelin',  label: '★ Michelin' },
+  cash:      { cls: 'badge-cash',      label: '¥ Cash only' },
+  priority:  { cls: 'badge-priority',  label: '⚡ Priority' },
+  repeat:    { cls: 'badge-repeat',    label: '↩ Repeat fav' },
+  nofrag:    { cls: 'badge-nofrag',    label: '🚫 No fragrance' },
+};
+
+// Render badge HTML
+function renderBadges(badges) {
+  if (!badges || !badges.length) return '';
+  return '<div class="stop-badges">' +
+    badges.map(b => {
+      const def = BADGE_MAP[b] || { cls: '', label: b };
+      return `<span class="badge ${def.cls}">${def.label}</span>`;
+    }).join('') + '</div>';
+}
+
+// Maps URLs
+function mapsUrl(query) {
+  return `https://maps.google.com/?q=${encodeURIComponent(query)}`;
+}
+function navUrl(query) {
+  return `https://maps.google.com/maps?daddr=${encodeURIComponent(query)}`;
+}
+
+// Copy address helper
+function copyAddress(text) {
+  navigator.clipboard.writeText(text).then(() => showToast('Address copied ✓'))
+    .catch(() => { showToast(text.substring(0, 30) + '…'); });
+}
+function showToast(msg) {
+  const t = document.getElementById('copy-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// Determine today in JST
+function getTodayJST() {
+  const now = new Date();
+  const jst = new Date(now.getTime() + (9 * 60 - now.getTimezoneOffset()) * 60000);
+  return jst.toISOString().slice(0, 10);
+}
+
+// Render a single stop
+function renderStop(stop) {
+  const dotClass = stop.type || 'activity';
+  const addrForCopy = stop.address || stop.locationName || stop.mapsQuery || '';
+  const hasLocation = !!(stop.mapsQuery || stop.locationName);
+
+  return `
+    <div class="stop">
+      <div class="stop-time">${stop.time || ''}</div>
+      <div class="stop-dot ${dotClass}"></div>
+      <div class="stop-content">
+        <div class="stop-title">${stop.title}</div>
+        ${stop.subtitle ? `<div class="stop-subtitle">${stop.subtitle}</div>` : ''}
+        ${renderBadges(stop.badges)}
+        ${stop.notes ? `<div class="stop-note">${stop.notes}</div>` : ''}
+        ${hasLocation ? `
+        <div class="stop-actions">
+          <a class="action-btn primary" href="${mapsUrl(stop.mapsQuery || stop.locationName)}" target="_blank" rel="noopener">📍 Maps</a>
+          <a class="action-btn" href="${navUrl(stop.mapsQuery || stop.locationName)}" target="_blank" rel="noopener">🧭 Navigate</a>
+          <button class="action-btn" onclick="copyAddress('${addrForCopy.replace(/'/g,"\\'")}')">📋 Copy</button>
+        </div>` : ''}
+      </div>
+    </div>`;
+}
+
+// Group stops by period
+function groupByPeriod(stops) {
+  const groups = {};
+  const order = ['morning', 'afternoon', 'evening'];
+  stops.forEach(s => {
+    const p = s.period || 'afternoon';
+    if (!groups[p]) groups[p] = [];
+    groups[p].push(s);
+  });
+  return order.filter(p => groups[p]).map(p => ({ period: p, stops: groups[p] }));
+}
+
+const PERIOD_LABELS = {
+  morning:   '🌅 Morning',
+  afternoon: '☀️ Afternoon',
+  evening:   '🌙 Evening',
+};
+
+// Render weather placeholder (real data loaded async)
+function renderWeatherPlaceholder(dayDate, city) {
+  return `<div class="weather-strip" id="wx-${dayDate}">
+    <div class="weather-icon">🌤</div>
+    <div class="weather-tbc">Loading weather for ${city}…</div>
+  </div>`;
+}
+
+// Render full day card
+function renderDayCard(day, todayJST, idx) {
+  const isToday = day.date === todayJST;
+  const hotelAddr = day.hotelMapsQuery || day.hotel;
+  const groups = groupByPeriod(day.stops || []);
+
+  let stopsHTML = '';
+  groups.forEach(g => {
+    stopsHTML += `<div class="period-label">${PERIOD_LABELS[g.period] || g.period}</div>`;
+    g.stops.forEach(s => { stopsHTML += renderStop(s); });
+  });
+
+  const hotelHtml = `
+    <div class="hotel-strip">
+      <div class="hotel-strip-icon">🏨</div>
+      <div class="hotel-strip-info">
+        <div class="hotel-strip-name">${day.hotel}</div>
+        <div class="hotel-strip-sub">${day.city}</div>
+      </div>
+      <div class="hotel-strip-actions">
+        <a class="micro-btn" href="${mapsUrl(hotelAddr)}" target="_blank" title="Open hotel in Maps">📍</a>
+        <a class="micro-btn" href="${navUrl(hotelAddr)}" target="_blank" title="Navigate to hotel">🧭</a>
+      </div>
+    </div>`;
+
+  return `
+    <div class="day-card${isToday ? ' today open' : ''}" data-date="${day.date}" id="day-${day.date}">
+      <div class="day-card-header" onclick="toggleDay(this)">
+        <div class="day-num">${day.dayNum}</div>
+        <div class="day-info">
+          <div class="day-weekday">${day.weekday}</div>
+          <div class="day-theme">${day.theme}</div>
+          <div class="day-city-tag">${day.city}</div>
+        </div>
+        ${isToday ? '<span class="today-badge">Today</span>' : ''}
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        ${renderWeatherPlaceholder(day.date, day.weatherCity || day.city)}
+        ${day.notes ? `<div class="day-note">${day.notes}</div>` : ''}
+        ${hotelHtml}
+        ${stopsHTML}
+      </div>
+    </div>`;
+}
+
+// Build all day cards
+function buildItinerary() {
+  const container = document.getElementById('days-container');
+  const today = getTodayJST();
+  let html = '';
+  TRIP.days.forEach((day, idx) => {
+    html += renderDayCard(day, today, idx);
+  });
+  container.innerHTML = html;
+
+  // If today is in the trip, scroll to it
+  const todayCard = document.getElementById('day-' + today);
+  if (todayCard) {
+    setTimeout(() => todayCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+  }
+}
+
+// Toggle day open/closed
+function toggleDay(header) {
+  const card = header.closest('.day-card');
+  card.classList.toggle('open');
+}
+
+
+/* ═══════════════════════════════════════
+   WEATHER — Open-Meteo (free, no key)
+════════════════════════════════════════ */
+
+const CITY_COORDS = {
+  "Tokyo": { lat: 35.6762, lon: 139.6503 }
+};
+
+const WX_CODE_MAP = {
+  0:'☀️ Clear', 1:'🌤 Mostly clear', 2:'⛅ Partly cloudy', 3:'☁️ Overcast',
+  45:'🌫 Foggy', 48:'🌫 Icy fog',
+  51:'🌦 Light drizzle', 53:'🌦 Drizzle', 55:'🌧 Heavy drizzle',
+  61:'🌧 Light rain', 63:'🌧 Rain', 65:'🌧 Heavy rain',
+  71:'🌨 Light snow', 73:'🌨 Snow', 75:'❄️ Heavy snow',
+  80:'🌦 Showers', 81:'🌧 Showers', 82:'⛈ Heavy showers',
+  95:'⛈ Thunderstorm', 96:'⛈ Thunderstorm w/ hail', 99:'⛈ Severe thunderstorm'
+};
+
+async function fetchWeather() {
+  const dates = TRIP.days.map(d => d.date);
+  const startDate = dates[0];
+  const endDate   = dates[dates.length - 1];
+
+  // Only need Tokyo for this trip
+  const coord = CITY_COORDS['Tokyo'];
+  if (!coord) return;
+
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${coord.lat}&longitude=${coord.lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&start_date=${startDate}&end_date=${endDate}&timezone=Asia%2FTokyo&temperature_unit=celsius`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('weather fetch failed');
+    const data = await res.json();
+    applyWeather(data, 'Tokyo');
+  } catch(e) {
+    // Fail gracefully — weather placeholders remain visible
+    TRIP.days.forEach(d => {
+      const el = document.getElementById('wx-' + d.date);
+      if (el) el.innerHTML = '<div class="weather-icon">🌤</div><div class="weather-tbc">Weather unavailable — check JMA or Weather.com</div>';
+    });
+  }
+}
+
+function applyWeather(data, city) {
+  const daily = data.daily;
+  daily.time.forEach((date, i) => {
+    const el = document.getElementById('wx-' + date);
+    if (!el) return;
+    const maxC = Math.round(daily.temperature_2m_max[i]);
+    const minC = Math.round(daily.temperature_2m_min[i]);
+    const maxF = Math.round(maxC * 9/5 + 32);
+    const minF = Math.round(minC * 9/5 + 32);
+    const precip = daily.precipitation_probability_max[i] || 0;
+    const code  = daily.weathercode[i];
+    const desc  = WX_CODE_MAP[code] || '🌤';
+    const parts = desc.split(' ');
+    const icon  = parts[0];
+    const label = parts.slice(1).join(' ');
+
+    el.innerHTML = `
+      <div class="weather-icon">${icon}</div>
+      <div style="flex:1;">
+        <div class="weather-temps">${minC}°–${maxC}°C &nbsp;/&nbsp; ${minF}°–${maxF}°F</div>
+        <div class="weather-desc">${label} · 💧 ${precip}% rain</div>
+      </div>`;
+  });
+}
+
+
+/* ═══════════════════════════════════════
+   LIVE CLOCK (JST)
+════════════════════════════════════════ */
+function updateClock() {
+  const now = new Date();
+  const jst = new Date(now.getTime() + (9 * 60 + now.getTimezoneOffset()) * 60000 * -1 + 9*3600000);
+
+  // Actually just offset correctly
+  const offset = 9 * 60; // JST is UTC+9
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const jstTime = new Date(utc + (offset * 60000));
+
+  const hh = String(jstTime.getHours()).padStart(2,'0');
+  const mm = String(jstTime.getMinutes()).padStart(2,'0');
+  document.getElementById('live-clock').textContent = `${hh}:${mm} JST`;
+
+  // Trip day badge
+  const todayJST = jstTime.toISOString().slice(0,10);
+  const startMs  = new Date(TRIP.startDate).getTime();
+  const endMs    = new Date(TRIP.endDate).getTime();
+  const todayMs  = new Date(todayJST).getTime();
+  const badge    = document.getElementById('trip-day-badge');
+
+  if (todayMs < startMs) {
+    const daysTo = Math.ceil((startMs - todayMs) / 86400000);
+    badge.textContent = `${daysTo}d to departure`;
+    badge.style.background = '#6b5f58';
+  } else if (todayMs > endMs) {
+    badge.textContent = 'Trip complete';
+    badge.style.background = '#4a7c59';
+  } else {
+    const tripDay = Math.floor((todayMs - startMs) / 86400000) + 1;
+    badge.textContent = `Day ${tripDay} of ${TRIP.days.length}`;
+    badge.style.background = '';
+  }
+}
+
+
+/* ═══════════════════════════════════════
+   TABS
+════════════════════════════════════════ */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+
+/* ═══════════════════════════════════════
+   CURRENCY CONVERTER
+════════════════════════════════════════ */
+document.getElementById('fx-rate-display').textContent = FX_RATE;
+
+function convertFromJPY(val) {
+  const v = parseFloat(val);
+  document.getElementById('usd-input').value = isNaN(v) ? '' : (v / FX_RATE).toFixed(2);
+}
+function convertFromUSD(val) {
+  const v = parseFloat(val);
+  document.getElementById('jpy-input').value = isNaN(v) ? '' : Math.round(v * FX_RATE);
+}
+function promptFxRate(e) {
+  e.preventDefault();
+  const r = prompt('Enter current JPY per USD rate:', FX_RATE);
+  if (r && !isNaN(parseFloat(r))) {
+    FX_RATE = parseFloat(r);
+    document.getElementById('fx-rate-display').textContent = FX_RATE;
+    // Re-run any open conversion
+    const jpyVal = document.getElementById('jpy-input').value;
+    if (jpyVal) convertFromJPY(jpyVal);
+  }
+}
+
+
+/* ═══════════════════════════════════════
+   INIT
+════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  buildItinerary();
+  updateClock();
+  setInterval(updateClock, 30000);
+  fetchWeather();
+});
+</script>
+
+</body>
+</html>
