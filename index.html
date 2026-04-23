@@ -256,7 +256,13 @@
         <span id="jst-clock">--:--</span>
         <span id="trip-day-label">Japan Standard Time</span>
       </div>
-      <span style="font-family:var(--font-serif);font-size:11px;letter-spacing:.8px;color:rgba(255,255,255,.55);font-style:italic;line-height:34px">happycamper.food</span>
+      <img id="hc-logo-img" src="https://gerhard-hci.github.io/Isaac-Ashkenazy-Japan-Trip/hc-logo.png" 
+     alt="Happy Camper" height="34"
+     style="display:block;height:34px;width:auto;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4));"
+     onerror="this.onerror=null;this.src='https://happycamper.food/cdn/shop/files/HC_Logo_white.png';this.onerror=function(){this.style.display='none';document.getElementById('hc-logo-text').style.display='flex';}">
+<div id="hc-logo-text" style="display:none;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);">
+  <span style="font-family:var(--font-serif);font-size:13px;font-weight:600;color:#fff;letter-spacing:0.5px;">HC</span>
+</div>
     </div>
   </div>
   <div class="hdr-names">
@@ -369,9 +375,9 @@ var TRIP = {
           loc:null, addr:null, q:null,
           notes:'This lunch has not yet been confirmed or requested. Options are being actively shaped and will be shared for approval via WhatsApp.', alert:null },
         { time:'20:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          title:'Sushi Ikkouu',
+          title:'Sushi Ikkou',
           sub:'Dinner · Confirmed · 20:30',
-          loc:'Sushi Ikkouu Tokyo', addr:'Tokyo', q:'Sushi Ikkouu Tokyo',
+          loc:'Sushi Ikkou Tokyo', addr:'Tokyo', q:'Sushi Ikkou Tokyo',
           notes:'A proven success for the group and one of the most meaningful repeat anchors of the week. The decision to return reflects the strength of prior experience.',
           alert:'No perfume or fragrance at the counter' }
       ]
@@ -507,7 +513,7 @@ var TRIP = {
 /* ── WISH LIST (For 2026/11 from Excel) ── */
 var WISHLIST_TRIP = [
   { name:'Arai',       style:'Sushi · Priority pursuit', status:'priority', q:'Arai sushi restaurant Tokyo' },
-  { name:'Sushi Ikkouu', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov · 20:30', status:'confirmed', q:'Sushi Ikkouu Tokyo' },
+  { name:'Sushi Ikkou', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov · 20:30', status:'confirmed', q:'Sushi Ikkou Tokyo' },
   { name:'Naruse',     style:'Japanese · Confirmed Wed 11 Nov 12:30 · Shizuoka', status:'confirmed', q:'Naruse restaurant Shizuoka' },
   { name:'Amamoto',    style:'Sushi · Active top priority pursuit', status:'requested', q:'Amamoto sushi Tokyo' },
   { name:'Sushi Meino',style:'Sushi · Repeat favourite · Confirmed Mon 9 Nov 12:00', status:'confirmed', q:'Sushi Meino Tokyo' },
