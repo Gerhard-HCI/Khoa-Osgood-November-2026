@@ -28,11 +28,12 @@
     a{color:inherit;text-decoration:none}
     button{font-family:var(--font-sans);cursor:pointer;-webkit-tap-highlight-color:transparent}
     input{font-family:var(--font-sans)}
-    html,body{height:auto;overflow:auto}
+    html,body{height:100%;overflow:hidden}
+    body{display:flex;flex-direction:column}
 
 ```
 /* ── HEADER ── */
-#app-header{position:sticky;top:0;z-index:100;background-color:#0D2847;background-image:linear-gradient(160deg,#0F3160 0%,#0D2847 55%,#071B35 100%);border-bottom:1px solid rgba(255,255,255,.08)}
+#app-header{flex-shrink:0;background-color:#0D2847;background-image:linear-gradient(160deg,#0F3160 0%,#0D2847 55%,#071B35 100%);border-bottom:1px solid rgba(255,255,255,.08)}
 .hdr-top{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 4px}
 .hdr-left{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .hdr-flag{font-size:17px;flex-shrink:0}
@@ -52,7 +53,7 @@
 .tab-btn.active{color:var(--sakura);border-bottom-color:var(--sakura)}
 
 /* ── MAIN CONTENT ── */
-#main-content{}
+#main-content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .tab-panel{display:none;padding:14px 14px 80px;animation:panelFade .22s ease both}
 .tab-panel.active{display:block}
 @keyframes panelFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
