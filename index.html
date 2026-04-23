@@ -124,8 +124,10 @@
 .stop-dot.t-hotel{border-color:#2E7D32;background:#E8F5E9}
 .stop-dot.t-flight{border-color:#0277BD;background:#E1F5FE}
 .stop-dot.t-suggestion{border-color:#1565C0;background:#E3F2FD}
+.stop-dot.t-pending{border-color:#607D8B;background:#ECEFF1}
 .stop-card{background:var(--cream);border-radius:var(--radius-md);border:1px solid var(--border-lt);padding:11px 13px}
 .stop-card.is-suggestion{background:#F0F7FF;border-color:rgba(21,101,192,.15)}
+.stop-card.is-pending{background:#F5F5F5;border-color:rgba(96,125,139,.15)}
 .stop-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .stop-title-wrap{flex:1;min-width:0}
 .stop-icon{font-size:13px;margin-right:5px}
@@ -139,6 +141,7 @@
 .stop-badge.self-booked{background:#FADADD;color:#7B1A1A;border:1px solid rgba(123,26,26,.18)}
 .stop-badge.suggestion {background:#BBDEFB;color:#0D3C6E;border:1px solid rgba(13,60,110,.18)}
 .stop-badge.walk-in    {background:#FFF9E6;color:#6B5000;border:1px solid rgba(107,80,0,.18)}
+.stop-badge.pending    {background:#ECEFF1;color:#546E7A;border:1px solid rgba(84,110,122,.2)}
 .stop-badge.logistics  {background:#FFE0B2;color:#BF360C;border:1px solid rgba(191,54,12,.18)}
 
 .stop-notes{font-size:12px;color:var(--ink-2);line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid var(--border-lt)}
@@ -321,14 +324,14 @@ var TRIP = {
       stops:[
         { time:'15:05', type:'flight', badge:'Logistics', badgeType:'logistics',
           title:'Arrive — Haneda Airport (HND)',
-          sub:'Delta DL7 · Private car to hotel',
+          sub:'Delta DL7 · HND',
           loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND',
-          notes:'Arrival 15:05. Private car waiting. Withdraw yen at 7-Eleven ATM on arrival — cash essential all week.', alert:null },
-        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          notes:'Arrival 15:05. Withdraw yen at 7-Eleven or Japan Post ATM on arrival — cash is essential all week.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Dinner',
-          sub:'Happy Camper selection — details shared once confirmed',
+          sub:'Not yet confirmed or requested',
           loc:null, addr:null, q:null,
-          notes:'Happy Camper is working on the selection for this evening. Details will be shared once confirmed.', alert:null }
+          notes:'This meal has not yet been confirmed or requested. Happy Camper is actively developing options and will share for approval via WhatsApp before any booking is made.', alert:null }
       ]
     },
 
@@ -345,30 +348,30 @@ var TRIP = {
           loc:'Sushi Meino Tokyo', addr:'Tokyo', q:'Sushi Meino Tokyo',
           notes:'A repeat favourite for the group. The decision to return reflects the strength of prior experience at this counter.',
           alert:'No perfume or fragrance at the counter' },
-        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Dinner',
-          sub:'Happy Camper selection — details shared once confirmed',
+          sub:'Not yet confirmed or requested',
           loc:null, addr:null, q:null,
-          notes:'Dinner being actively developed. Details will be shared via WhatsApp once confirmed.', alert:null }
+          notes:'This dinner has not yet been confirmed or requested. Options are being actively developed and will be shared for approval before any reservation is made.', alert:null }
       ]
     },
 
-    /* ── DAY 3 · Tue 10 Nov · Hosted · Sushi Ikko ── */
+    /* ── DAY 3 · Tue 10 Nov · Hosted · Sushi Ikkou ── */
     {
       date:'2026-11-10', dayNum:3, weekday:'Tuesday, 10 November',
       city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
       hosted:true,
-      notes:'Hosted — Tomoko & Gerhard. Sushi Ikko confirmed at 20:30 — a key anchor of the week.',
+      notes:'Hosted — Tomoko & Gerhard. Sushi Ikkou confirmed at 20:30 — a key anchor of the week.',
       stops:[
-        { time:'~13:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'~13:00', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Lunch',
-          sub:'Happy Camper selection — details shared once confirmed',
+          sub:'Not yet confirmed or requested',
           loc:null, addr:null, q:null,
-          notes:'Lunch being shaped as the programme develops. Will be shared for approval via WhatsApp.', alert:null },
+          notes:'This lunch has not yet been confirmed or requested. Options are being actively shaped and will be shared for approval via WhatsApp.', alert:null },
         { time:'20:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          title:'Sushi Ikko',
+          title:'Sushi Ikkouu',
           sub:'Dinner · Confirmed · 20:30',
-          loc:'Sushi Ikko Tokyo', addr:'Tokyo', q:'Sushi Ikko Tokyo',
+          loc:'Sushi Ikkouu Tokyo', addr:'Tokyo', q:'Sushi Ikkouu Tokyo',
           notes:'A proven success for the group and one of the most meaningful repeat anchors of the week. The decision to return reflects the strength of prior experience.',
           alert:'No perfume or fragrance at the counter' }
       ]
@@ -390,18 +393,18 @@ var TRIP = {
           title:'Naruse',
           sub:'Shizuoka · Lunch · Confirmed · 12:30',
           loc:'Naruse Shizuoka', addr:'Shizuoka, Japan', q:'Naruse restaurant Shizuoka',
-          notes:'One of the key confirmed anchors of the week. A serious, high-quality lunch experience that fits the tone of the programme perfectly.',
+          notes:'Naruse is widely considered one of the finest restaurants in Shizuoka — a chef of deep technical skill whose cooking reflects the extraordinary local produce of the region: Suruga Bay seafood, mountain vegetables, and Shizuoka\'s celebrated green tea. The counter is intimate and the experience quietly exceptional. A confirmed anchor of the week and one of the standout meals of the programme.',
           alert:'No perfume or fragrance at the counter' },
         { time:'~16:00', type:'transport', badge:'Logistics', badgeType:'logistics',
           title:'Return to Tokyo',
           sub:'Shinkansen · Arrive ~17:00',
           loc:'Shizuoka Station', addr:'Shizuoka, Japan', q:'Shizuoka Station JR',
           notes:'Return Shinkansen to Tokyo. A light evening after the Shizuoka experience.', alert:null },
-        { time:'~19:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'~19:00', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Light Dinner',
           sub:'Happy Camper selection — relaxed evening',
           loc:null, addr:null, q:null,
-          notes:'A lighter dinner this evening. Options to be shared via WhatsApp.', alert:null }
+          notes:'This dinner has not yet been confirmed or requested. A lighter meal is planned following the Shizuoka experience — options to be shared via WhatsApp.', alert:null }
       ]
     },
 
@@ -418,10 +421,10 @@ var TRIP = {
           loc:'RestoPizza Tokyo', addr:'Tokyo', q:'RestoPizza Tokyo',
           notes:'An important and deliberate counterpoint to the formal sushi meals — variety in tone and register while remaining fully aligned with the group\'s standards.', alert:null },
         { time:'~19:30', type:'restaurant', badge:'Requested', badgeType:'requested',
-          title:'Dinner — Matsukawa · Amamoto · Mitei',
-          sub:'Active priority pursuits',
+          title:'Dinner — Matsukawa · Amamoto',
+          sub:'Active pursuit — not yet confirmed',
           loc:'Tokyo', addr:'Tokyo', q:'Matsukawa restaurant Tokyo',
-          notes:'Three major dinner targets being actively pursued. Matsukawa, Amamoto, and Mitei each represent a headline dining moment if access can be secured. Options presented for approval before any reservation is confirmed.',
+          notes:'Matsukawa and Amamoto are the primary dinner targets for this evening and are being actively pursued. Neither is confirmed — access to both requires relationship and timing. If either is secured it would represent one of the most significant meals of the week. Options presented for approval before any reservation is made.',
           alert:'No perfume or fragrance at omakase counters' }
       ]
     },
@@ -435,35 +438,35 @@ var TRIP = {
       stops:[
         { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Sushi Saito',
-          sub:'Lunch · Confirmed · 5 seats · 12:00',
+          sub:'Lunch · Confirmed · 4 seats · 12:00',
           loc:'Sushi Saito Tokyo', addr:'Tokyo', q:'Sushi Saito Tokyo',
-          notes:'One of the great headline meals of the entire week. Five seats confirmed for Friday 13 November at 12:00. A reservation that reflects both the ambition of the itinerary and the quality of access this programme delivers.',
+          notes:'One of the great headline meals of the entire week. Four seats confirmed for Friday 13 November at 12:00. A reservation that reflects both the ambition of the itinerary and the quality of access this programme delivers.',
           alert:'No perfume or fragrance at the counter' },
-        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Dinner',
-          sub:'Happy Camper selection — details shared once confirmed',
+          sub:'Not yet confirmed or requested',
           loc:null, addr:null, q:null,
           notes:'Dinner for this evening being pursued. Will be shared for input and approval as the programme develops.', alert:null }
       ]
     },
 
-    /* ── DAY 7 · Sat 14 Nov · Hosted · Meino · Suetomi ── */
+    /* ── DAY 7 · Sat 14 Nov · Hosted · Sushi Meino ── */
     {
       date:'2026-11-14', dayNum:7, weekday:'Saturday, 14 November',
       city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
       hosted:true,
-      notes:'Hosted — Tomoko & Gerhard. Meino and Suetomi remain active repeat-request priorities.',
+      notes:'Hosted — Tomoko & Gerhard. Sushi Meino is the active pursuit for this evening.',
       stops:[
-        { time:'~13:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'~13:00', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Lunch',
-          sub:'Happy Camper selection — details shared once confirmed',
+          sub:'Not yet confirmed or requested',
           loc:null, addr:null, q:null,
-          notes:'Ensuring the right rhythm and variety across the final days. Details shared once confirmed.', alert:null },
+          notes:'This lunch has not yet been confirmed or requested. Options are being shaped to ensure the right rhythm and variety across the final days of the programme.', alert:null },
         { time:'~19:30', type:'restaurant', badge:'Requested', badgeType:'requested',
-          title:'Dinner — Sushi Meino · Suetomi',
-          sub:'Repeat favourites · Active pursuit',
+          title:'Dinner — Sushi Meino',
+          sub:'Repeat favourite · Active pursuit',
           loc:'Tokyo', addr:'Tokyo', q:'Sushi Meino Tokyo',
-          notes:'Both Sushi Meino and Suetomi are repeat requests based on prior success. Being actively pursued for placement on this evening.',
+          notes:'Sushi Meino is a confirmed group favourite and is being actively pursued for this evening. The decision to return is based on prior experience at this counter.',
           alert:'No fragrance at the counter' }
       ]
     },
@@ -475,21 +478,21 @@ var TRIP = {
       hosted:false,
       notes:'Designed as a complete final culinary day. Late-night departure allows the full day for dining.',
       stops:[
-        { time:'~12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          title:'Atami',
-          sub:'Lunch · Confirmed · Final day anchor',
-          loc:'Atami Tokyo', addr:'Tokyo', q:'Atami restaurant Tokyo',
-          notes:'A considered and appropriate close to the week\'s daytime dining sequence.', alert:null },
-        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
-          title:'Final Dinner',
-          sub:'Happy Camper selection — details shared once confirmed',
+        { time:'~12:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
+          title:'Lunch — Final Day',
+          sub:'Options under active review',
           loc:null, addr:null, q:null,
-          notes:'The trip concludes as a complete culinary day. Options shared via WhatsApp for approval.', alert:null },
+          notes:'Note: Atami was the original anchor for this final lunch but is now fully booked. Happy Camper is actively seeking an alternative of comparable quality. Details to be shared via WhatsApp once confirmed.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
+          title:'Final Dinner',
+          sub:'Not yet confirmed or requested',
+          loc:null, addr:null, q:null,
+          notes:'This final dinner has not yet been confirmed or requested. The programme is designed to conclude as a complete culinary day — options will be shared via WhatsApp for approval.', alert:null },
         { time:'~22:30', type:'transport', badge:'Logistics', badgeType:'logistics',
           title:'Transfer to Haneda Airport',
-          sub:'Private car from dinner venue',
+          sub:'Haneda Airport · Allow ~50 min from central Tokyo',
           loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND',
-          notes:'Transfer arranged as part of programme logistics. Allow 45–60 min from central Tokyo.', alert:null },
+          notes:'Haneda is approximately 45–60 minutes from central Tokyo by taxi or Airport Limousine Bus.', alert:null },
         { time:'00:05', type:'flight', badge:'Logistics', badgeType:'logistics',
           title:'Depart Haneda (HND) \u2192 Dubai',
           sub:'Monday 16 November · 00:05',
@@ -504,12 +507,11 @@ var TRIP = {
 /* ── WISH LIST (For 2026/11 from Excel) ── */
 var WISHLIST_TRIP = [
   { name:'Arai',       style:'Sushi · Priority pursuit', status:'priority', q:'Arai sushi restaurant Tokyo' },
-  { name:'Sushi Ikko', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov 20:30', status:'confirmed', q:'Sushi Ikko Tokyo' },
+  { name:'Sushi Ikkouu', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov · 20:30', status:'confirmed', q:'Sushi Ikkouu Tokyo' },
   { name:'Naruse',     style:'Japanese · Confirmed Wed 11 Nov 12:30 · Shizuoka', status:'confirmed', q:'Naruse restaurant Shizuoka' },
   { name:'Amamoto',    style:'Sushi · Active top priority pursuit', status:'requested', q:'Amamoto sushi Tokyo' },
-  { name:'Suetomi',    style:'Sushi · Repeat favourite · Active pursuit Sat 14 Nov', status:'requested', q:'Suetomi sushi Tokyo' },
   { name:'Sushi Meino',style:'Sushi · Repeat favourite · Confirmed Mon 9 Nov 12:00', status:'confirmed', q:'Sushi Meino Tokyo' },
-  { name:'Sushi Saito',style:'Sushi · Confirmed · 5 seats · Fri 13 Nov 12:00', status:'confirmed', q:'Sushi Saito Tokyo' },
+  { name:'Sushi Saito',style:'Sushi · Confirmed · 4 seats · Fri 13 Nov 12:00', status:'confirmed', q:'Sushi Saito Tokyo' },
   { name:'Matsukawa',  style:'Japanese · Major priority pursuit', status:'requested', q:'Matsukawa restaurant Tokyo' },
   { name:'RestoPizza', style:'Pizza · Requested · Thu 12 Nov', status:'requested', q:'RestoPizza Tokyo' },
 ];
@@ -551,7 +553,7 @@ var VISITED = {
     {num:20,meal:'Lunch', type:'Sushi',        name:'Sushi Shunji'},
     {num:21,meal:'Lunch', type:'Sushi',        name:'Sugita (4 pax)'},
     {num:22,meal:'Dinner',type:'Sushi',        name:'Sushi Meino'},
-    {num:23,meal:'Dinner',type:'Sushi',        name:'Ikko'},
+    {num:23,meal:'Dinner',type:'Sushi',        name:'Ikkou'},
   ],
   '2024':[
     {num:24,meal:'Dinner',type:'Chinese',       name:'Sazenka'},
@@ -657,13 +659,13 @@ var ICONS={flight:'✈️',transport:'🚄',hotel:'🏨',restaurant:'🍽️',ac
    KEY RULE: suggestion type → name hidden, NO map links
 ────────────────────────────────────────────────────────── */
 function renderStop(stop,di,si){
-  var isSuggestion=stop.badgeType==='suggestion';
+  var isSuggestion=stop.badgeType==='pending'||stop.badgeType==='suggestion';
   var isActionable=!isSuggestion&&(stop.badgeType==='confirmed'||stop.badgeType==='logistics'||stop.badgeType==='requested'||stop.badgeType==='self-booked'||stop.badgeType==='walk-in');
   var hasLoc=!!(stop.q||stop.loc);
   var icon=ICONS[stop.type]||'📍';
   var badge=stop.badge?'<span class="stop-badge '+stop.badgeType+'">'+esc(stop.badge)+'</span>':'';
-  var dotClass=isSuggestion?'t-suggestion':('t-'+(stop.type||'restaurant'));
-  var cardClass=isSuggestion?' is-suggestion':'';
+  var dotClass=isSuggestion?'t-pending':('t-'+(stop.type||'restaurant'));
+  var cardClass=isSuggestion?' is-pending':'';  // pending = not yet confirmed or requested
 
   /* Map buttons: only active for non-suggestion types with a location */
   var mapHTML=isActionable&&hasLoc
@@ -697,7 +699,7 @@ function renderItinerary(){
     +'<div class="banner-dates">8 – 15 November 2026 &middot; Four Guests &middot; 7 Nights</div>'
     +'<div class="banner-chips">'
     +'<span class="banner-chip confirmed">&#x1F363; Sushi Saito &middot; Confirmed</span>'
-    +'<span class="banner-chip confirmed">&#x1F363; Sushi Ikko &middot; Confirmed</span>'
+    +'<span class="banner-chip confirmed">&#x1F363; Sushi Ikkou &middot; Confirmed</span>'
     +'<span class="banner-chip confirmed">&#x1F35C; Naruse &middot; Confirmed</span>'
     +'<span class="banner-chip">&#x1F4C5; 6 Hosted Days</span>'
     +'<span class="banner-chip">&#x1F342; Autumn Tokyo</span>'
@@ -708,6 +710,7 @@ function renderItinerary(){
     +'<span class="bl-item"><span class="bl-dot self-booked"></span>Self-booked</span>'
     +'<span class="bl-item"><span class="bl-dot suggestion"></span>Suggestion</span>'
     +'<span class="bl-item"><span class="bl-dot walk-in"></span>Walk-in</span>'
+    +'<span class="bl-item"><span class="bl-dot" style="background:#ECEFF1;border:1px solid rgba(84,110,122,.3)"></span>Not Yet Confirmed</span>'
     +'</div>'
     +'<div class="section-label">Daily Itinerary</div>';
 
@@ -863,7 +866,7 @@ function renderEmergency(){
     +'</div>'
     +'<div class="section-label">Happy Camper &mdash; Your Team</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">&#x1F33F;</div><div><div class="contact-label">Tomoko &mdash; Tokyo Guide</div><div class="contact-sub">Hosted days &middot; All Tokyo</div></div></div><a href="tel:+819061589006" class="call-btn cn">&#x1F4DE; Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">&#x1F33F;</div><div><div class="contact-label">Tomoko &mdash; Happy Camper Owner &amp; CEO</div><div class="contact-sub">Owner &amp; CEO &middot; Happy Camper Ltd. &middot; All Tokyo</div></div></div><a href="tel:+819061589006" class="call-btn cn">&#x1F4DE; Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">&#x1F33F;</div><div><div class="contact-label">Gerhard &mdash; Happy Camper</div><div class="contact-sub">Programme director &middot; WhatsApp group</div></div></div><a href="tel:+818069892107" class="call-btn cn">&#x1F4DE; Call</a></div>'
     +'</div>'
     +'<div class="section-label">Medical &mdash; Tokyo</div>'
@@ -881,7 +884,30 @@ function renderEmergency(){
     +'<li><span class="info-emoji">&#x1F60A;</span><div class="info-text"><strong>Sumimasen</strong>Excuse me / Sorry (most useful word)</div></li>'
     +'<li><span class="info-emoji">&#x1F37D;&#xFE0F;</span><div class="info-text"><strong>Gochisousama deshita</strong>Thank you for the meal &mdash; always say after dining</div></li>'
     +'<li><span class="info-emoji">&#x1F6A8;</span><div class="info-text"><strong>Tasukete kudasai!</strong>Please help me!</div></li>'
-    +'<li><span class="info-emoji">&#x1F691;</span><div class="info-text"><strong>Kyukyusha wo yonde kudasai</strong>Please call an ambulance</div></li>'
+    +'<li><span class="info-emoji">&#x1F691;</span><div class="info-text"><strong>Kyukyusha wo yonde kudasai &middot; &#x6551;&#x6025;&#x8ECA;&#x3092;&#x547C;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;</strong>Please call an ambulance</div></li>'
+    +'<li><span class="info-emoji">&#x1F46E;</span><div class="info-text"><strong>Keisatsu wo yonde kudasai &middot; &#x8B66;&#x5BDF;&#x3092;&#x547C;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;</strong>Please call the police</div></li>'
+    +'<li><span class="info-emoji">&#x1F3E5;</span><div class="info-text"><strong>Byoin wa doko desu ka? &middot; &#x75C5;&#x9662;&#x306F;&#x3069;&#x3053;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>Where is the hospital?</div></li>'
+    +'<li><span class="info-emoji">&#x1F48A;</span><div class="info-text"><strong>Kusuri ga hitsuyou desu &middot; &#x85AC;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;</strong>I need medicine</div></li>'
+    +'<li><span class="info-emoji">&#x1F3E8;</span><div class="info-text"><strong>Chekku-in onegai shimasu &middot; &#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x30A4;&#x30F3;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;</strong>Check-in please</div></li>'
+    +'<li><span class="info-emoji">&#x1F695;</span><div class="info-text"><strong>~ made onegai shimasu &middot; &#xFF5E;&#x307E;&#x3067;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;</strong>To ~ please (show address to driver)</div></li>'
+    +'<li><span class="info-emoji">&#x1F4B3;</span><div class="info-text"><strong>Kaado de haraemasu ka? &middot; &#x30AB;&#x30FC;&#x30C9;&#x3067;&#x6255;&#x3048;&#x307E;&#x3059;&#x304B;&#xFF1F;</strong>Can I pay by card?</div></li>'
+    +'<li><span class="info-emoji">&#x1F4B4;</span><div class="info-text"><strong>Ikura desu ka? &middot; &#x3044;&#x304F;&#x3089;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>How much is it?</div></li>'
+    +'<li><span class="info-emoji">&#x1F6AB;</span><div class="info-text"><strong>~ wa taberaremasen &middot; &#xFF5E;&#x306F;&#x98DF;&#x3079;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;</strong>I cannot eat ~ (say the ingredient)</div></li>'
+    +'<li><span class="info-emoji">&#x1F375;</span><div class="info-text"><strong>Osusume wa nan desu ka? &middot; &#x304A;&#x3059;&#x3059;&#x3081;&#x306F;&#x4F55;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>What do you recommend?</div></li>'
+    +'<li><span class="info-emoji">&#x1F6BD;</span><div class="info-text"><strong>Otearai wa doko desu ka? &middot; &#x304A;&#x624B;&#x6D17;&#x3044;&#x306F;&#x3069;&#x3053;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>Where is the bathroom?</div></li>'
+    +'<li><span class="info-emoji">&#x1F4F8;</span><div class="info-text"><strong>Shashin wo totte mo ii desu ka? &middot; &#x5199;&#x771F;&#x3092;&#x6483;&#x3063;&#x3066;&#x3082;&#x3044;&#x3044;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>May I take a photo?</div></li>'
+    +'<li><span class="info-emoji">&#x1F6CD;</span><div class="info-text"><strong>Mite iru dake desu &middot; &#x898B;&#x3066;&#x3044;&#x308B;&#x3060;&#x3051;&#x3067;&#x3059;</strong>Just looking, thank you</div></li>'
+    +'<li><span class="info-emoji">&#x1F6AA;</span><div class="info-text"><strong>~ wa doko desu ka? &middot; &#xFF5E;&#x306F;&#x3069;&#x3053;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>Where is ~?</div></li>'
+    +'<li><span class="info-emoji">&#x1F503;</span><div class="info-text"><strong>Mou ichido onegai shimasu &middot; &#x3082;&#x3046;&#x4E00;&#x5EA6;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;</strong>Please say that again</div></li>'
+    +'<li><span class="info-emoji">&#x1F1EC;&#x1F1E7;</span><div class="info-text"><strong>Eigo ga hanasemasu ka? &middot; &#x82F1;&#x8A9E;&#x304C;&#x8A71;&#x305B;&#x307E;&#x3059;&#x304B;&#xFF1F;</strong>Do you speak English?</div></li>'
+    +'<li><span class="info-emoji">&#x274C;</span><div class="info-text"><strong>Wakarimasen &middot; &#x308F;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;</strong>I don&#x27;t understand</div></li>'
+    +'<li><span class="info-emoji">&#x2705;</span><div class="info-text"><strong>Hai / Iie &middot; &#x306F;&#x3044; / &#x3044;&#x3044;&#x3048;</strong>Yes / No</div></li>'
+    +'<li><span class="info-emoji">&#x1F354;</span><div class="info-text"><strong>Kore wo kudasai &middot; &#x3053;&#x308C;&#x3092;&#x304F;&#x3060;&#x3055;&#x3044;</strong>This one please</div></li>'
+    +'<li><span class="info-emoji">&#x1F570;</span><div class="info-text"><strong>Nanji desu ka? &middot; &#x4F55;&#x6642;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>What time is it?</div></li>'
+    +'<li><span class="info-emoji">&#x1F693;</span><div class="info-text"><strong>Takushii wo yonde kudasai &middot; &#x30BF;&#x30AF;&#x30B7;&#x30FC;&#x3092;&#x547C;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;</strong>Please call a taxi</div></li>'
+    +'<li><span class="info-emoji">&#x1F688;</span><div class="info-text"><strong>Eki wa doko desu ka? &middot; &#x99C5;&#x306F;&#x3069;&#x3053;&#x3067;&#x3059;&#x304B;&#xFF1F;</strong>Where is the station?</div></li>'
+    +'<li><span class="info-emoji">&#x1F9ED;</span><div class="info-text"><strong>Michi ni mayoimashita &middot; &#x9053;&#x306B;&#x8FF7;&#x3044;&#x307E;&#x3057;&#x305F;</strong>I am lost</div></li>'
+    +'<li><span class="info-emoji">&#x1F4DD;</span><div class="info-text"><strong>Ryoshuusho wo onegai shimasu &middot; &#x9818;&#x53CE;&#x66F8;&#x3092;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;</strong>Receipt please</div></li>'
     +'</ul></div>';
 }
 
