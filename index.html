@@ -33,12 +33,7 @@
 
 ```
 /* ── HEADER ── */
-#app-header{
-  flex-shrink:0;
-  background-color:#0D2847;
-  background-image:linear-gradient(160deg,#0F3160 0%,#0D2847 55%,#071B35 100%);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
+#app-header{flex-shrink:0;background-color:#0D2847;background-image:linear-gradient(160deg,#0F3160 0%,#0D2847 55%,#071B35 100%);border-bottom:1px solid rgba(255,255,255,.08)}
 .hdr-top{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 4px}
 .hdr-left{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .hdr-flag{font-size:17px;flex-shrink:0}
@@ -47,7 +42,7 @@
 .hdr-names{text-align:center;padding:0 14px 7px;border-bottom:1px solid rgba(255,255,255,.06)}
 .hdr-name{font-family:var(--font-serif);font-size:19px;font-weight:300;letter-spacing:.6px;color:#fff;line-height:1.15}
 .hdr-name2{font-size:8.5px;color:rgba(255,255,255,.45);letter-spacing:1.4px;text-transform:uppercase;margin-top:2px}
-.hdr-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hdr-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 #jst-clock{font-family:'SF Mono','Menlo',monospace;font-size:14px;font-weight:300;letter-spacing:1px;color:#fff;display:block;text-align:right;white-space:nowrap}
 #trip-day-label{font-size:8.5px;color:rgba(255,255,255,.38);letter-spacing:.4px;margin-top:1px;display:block;text-align:right;white-space:nowrap}
 #hc-logo{display:block;height:34px;width:auto;flex-shrink:0;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4))}
@@ -55,7 +50,7 @@
 /* ── TAB NAV ── */
 .tab-nav{display:flex;border-top:1px solid rgba(255,255,255,.07);overflow-x:auto;scrollbar-width:none}
 .tab-nav::-webkit-scrollbar{display:none}
-.tab-btn{flex-shrink:0;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,.42);font-size:10.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;padding:9px 12px 7px;transition:color .18s,border-color .18s;cursor:pointer;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.tab-btn{flex-shrink:0;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,.42);font-size:10.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;padding:9px 13px 7px;transition:color .18s,border-color .18s;cursor:pointer;-webkit-tap-highlight-color:transparent;white-space:nowrap}
 .tab-btn.active{color:var(--sakura);border-bottom-color:var(--sakura)}
 
 /* ── MAIN CONTENT ── */
@@ -72,18 +67,19 @@
 .trip-banner .banner-dates{font-size:13px;opacity:.72;position:relative}
 .banner-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;position:relative}
 .banner-chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 10px;font-size:11px}
-.banner-chip.priority{background:rgba(232,164,178,.25);border-color:rgba(232,164,178,.4)}
+.banner-chip.confirmed{background:rgba(200,230,201,.25);border-color:rgba(200,230,201,.5)}
 
 .section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-4);padding:8px 2px 6px}
+
+/* ── BOOKING LEGEND ── */
 .booking-legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 14px;background:var(--white);border-radius:var(--radius-md);margin-bottom:10px;border:1px solid var(--border-lt)}
 .bl-item{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--ink-3);font-weight:500}
 .bl-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 .bl-dot.confirmed{background:#C8E6C9;border:1px solid rgba(27,94,32,.3)}
-.bl-dot.self-booked{background:#FADADD;border:1px solid rgba(123,26,26,.3)}
-.bl-dot.walk-in{background:#FFF9E6;border:1px solid rgba(107,80,0,.3)}
 .bl-dot.requested{background:#80DEEA;border:1px solid rgba(0,77,86,.3)}
+.bl-dot.self-booked{background:#FADADD;border:1px solid rgba(123,26,26,.3)}
 .bl-dot.suggestion{background:#BBDEFB;border:1px solid rgba(13,60,110,.3)}
-.bl-dot.tbd{background:#F1F3F4;border:1px solid rgba(95,99,104,.3)}
+.bl-dot.walk-in{background:#FFF9E6;border:1px solid rgba(107,80,0,.3)}
 
 /* ── DAY CARDS ── */
 .day-card{background:var(--white);border-radius:var(--radius);margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--border-lt);animation:cardIn .28s ease both}
@@ -113,11 +109,7 @@
 .day-note-bar{background:var(--navy-lt);border-radius:var(--radius-md);border-left:3px solid #4A80C0;padding:10px 13px;font-size:12px;color:var(--ink-2);line-height:1.55;margin-bottom:12px}
 
 .weather-widget{display:flex;align-items:center;gap:10px;background:var(--gold-lt);border-radius:var(--radius-md);border:1px solid rgba(176,124,34,.15);padding:10px 13px;margin-bottom:14px}
-.wx-icon{font-size:26px}
-.wx-info{flex:1}
-.wx-temp{font-size:14px;font-weight:600}
-.wx-desc{font-size:11px;color:var(--ink-3);margin-top:2px}
-.wx-rain{font-size:12px;font-weight:500;color:#1D6FAD;flex-shrink:0}
+.wx-icon{font-size:26px}.wx-info{flex:1}.wx-temp{font-size:14px;font-weight:600}.wx-desc{font-size:11px;color:var(--ink-3);margin-top:2px}.wx-rain{font-size:12px;font-weight:500;color:#1D6FAD;flex-shrink:0}
 .wx-loading{font-size:12px;color:var(--ink-4);animation:pulse 1.5s ease infinite}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 
@@ -133,29 +125,30 @@
 .stop-dot.t-transport{border-color:#0D2847;background:#EEF4FF}
 .stop-dot.t-hotel{border-color:#2E7D32;background:#E8F5E9}
 .stop-dot.t-flight{border-color:#0277BD;background:#E1F5FE}
-.stop-dot.t-market{border-color:#E65100;background:#FBE9E7}
-.stop-dot.t-shopping{border-color:#00695C;background:#E0F2F1}
-.stop-dot.t-bar{border-color:#B07C22;background:#FBF5E6}
+.stop-dot.t-suggestion{border-color:#1565C0;background:#E3F2FD}
 .stop-card{background:var(--cream);border-radius:var(--radius-md);border:1px solid var(--border-lt);padding:11px 13px}
+.stop-card.is-suggestion{background:#F0F7FF;border-color:rgba(21,101,192,.15)}
 .stop-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .stop-title-wrap{flex:1;min-width:0}
 .stop-icon{font-size:13px;margin-right:5px}
 .stop-title{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
 .stop-subtitle{font-size:11px;color:var(--ink-3);margin-top:2px}
+
+/* ── BOOKING STATUS BADGES ── */
 .stop-badge{font-size:9.5px;font-weight:600;padding:3px 9px;border-radius:5px;flex-shrink:0;white-space:nowrap;letter-spacing:.1px}
-.stop-badge.confirmed{background:#C8E6C9;color:#1B5E20;border:1px solid rgba(27,94,32,.18)}
+.stop-badge.confirmed  {background:#C8E6C9;color:#1B5E20;border:1px solid rgba(27,94,32,.18)}
+.stop-badge.requested  {background:#80DEEA;color:#004D56;border:1px solid rgba(0,77,86,.18)}
 .stop-badge.self-booked{background:#FADADD;color:#7B1A1A;border:1px solid rgba(123,26,26,.18)}
-.stop-badge.requested{background:#80DEEA;color:#004D56;border:1px solid rgba(0,77,86,.18)}
-.stop-badge.suggestion{background:#BBDEFB;color:#0D3C6E;border:1px solid rgba(13,60,110,.18)}
-.stop-badge.walk-in{background:#FFF9E6;color:#6B5000;border:1px solid rgba(107,80,0,.18)}
-.stop-badge.logistics{background:#FFE0B2;color:#BF360C;border:1px solid rgba(191,54,12,.18)}
-.stop-badge.tbd{background:#F1F3F4;color:#3C4043;border:1px solid rgba(95,99,104,.18)}
+.stop-badge.suggestion {background:#BBDEFB;color:#0D3C6E;border:1px solid rgba(13,60,110,.18)}
+.stop-badge.walk-in    {background:#FFF9E6;color:#6B5000;border:1px solid rgba(107,80,0,.18)}
+.stop-badge.logistics  {background:#FFE0B2;color:#BF360C;border:1px solid rgba(191,54,12,.18)}
+
 .stop-notes{font-size:12px;color:var(--ink-2);line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid var(--border-lt)}
 .stop-alert{display:flex;align-items:flex-start;gap:6px;margin-top:8px;padding:7px 10px;background:#FFFBEB;border-radius:var(--radius-sm);border-left:3px solid #F59E0B;font-size:11px;color:#92400E;font-weight:500;line-height:1.4}
 .map-actions{display:flex;gap:5px;margin-top:10px}
 .map-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:8px 5px;border-radius:var(--radius-sm);font-size:11px;font-weight:500;min-height:34px;border:1px solid var(--border);background:var(--white);color:var(--ink-2);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .map-btn:active{transform:scale(.96)}
-.map-btn.map-disabled{color:var(--border);cursor:default;background:var(--border-lt);border-color:var(--border-lt);pointer-events:none;opacity:.45}
+.map-btn.map-disabled{color:var(--border);cursor:default;background:var(--border-lt);border-color:var(--border-lt);pointer-events:none;opacity:.4}
 .map-btn.mp{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
 
 /* ── UTILITIES ── */
@@ -179,9 +172,9 @@
 .rule-icon{font-size:15px;flex-shrink:0;margin-top:1px}
 .rule-text strong{color:var(--ink)}
 
-/* ── WISHLIST ── */
+/* ── WISH LIST ── */
 .wishlist-banner{background:linear-gradient(135deg,#4A1942 0%,#2D0F27 100%);border-radius:var(--radius);padding:22px 20px 18px;margin-bottom:14px;color:#fff;position:relative;overflow:hidden}
-.wishlist-banner::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat}
+.wishlist-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat}
 .wishlist-banner h2{font-family:var(--font-serif);font-size:26px;font-weight:300;letter-spacing:.8px;margin-bottom:4px;position:relative}
 .wishlist-banner p{font-size:12px;opacity:.65;position:relative}
 .wish-card{background:var(--white);border-radius:var(--radius);margin-bottom:10px;box-shadow:var(--shadow);border:1px solid var(--border-lt);overflow:hidden}
@@ -191,16 +184,16 @@
 .wish-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.2}
 .wish-style{font-size:10.5px;color:var(--ink-4);margin-top:2px}
 .wish-status{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:5px;white-space:nowrap;margin-top:3px;display:inline-block}
-.wish-status.priority{background:#FCE4EC;color:#880E4F;border:1px solid rgba(136,14,79,.2)}
 .wish-status.confirmed{background:#C8E6C9;color:#1B5E20;border:1px solid rgba(27,94,32,.2)}
-.wish-status.done{background:#F1F3F4;color:#5F6368;border:1px solid rgba(95,99,104,.2)}
+.wish-status.requested{background:#80DEEA;color:#004D56;border:1px solid rgba(0,77,86,.2)}
+.wish-status.priority{background:#FCE4EC;color:#880E4F;border:1px solid rgba(136,14,79,.2)}
 .wish-actions{display:flex;gap:6px;flex-shrink:0}
 .wish-map-btn{padding:7px 11px;border-radius:var(--radius-sm);font-size:11px;font-weight:500;border:1px solid var(--border);background:var(--white);color:var(--ink-2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:3px}
 .wish-divider{height:1px;background:var(--border-lt);margin:0}
 
 /* ── VISITED ── */
 .visited-banner{background:linear-gradient(135deg,#1A3A2A 0%,#0D2018 100%);border-radius:var(--radius);padding:22px 20px 18px;margin-bottom:14px;color:#fff;position:relative;overflow:hidden}
-.visited-banner::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat}
+.visited-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat}
 .visited-banner h2{font-family:var(--font-serif);font-size:26px;font-weight:300;letter-spacing:.8px;margin-bottom:4px;position:relative}
 .visited-banner p{font-size:12px;opacity:.65;position:relative}
 .visited-year{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);padding:10px 2px 6px;margin-top:6px}
@@ -224,22 +217,19 @@
 .contact-row:last-child{border-bottom:none}
 .contact-left{display:flex;align-items:center;gap:12px}
 .contact-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
-.ci-r{background:#FFEBEE}.ci-g{background:#E8F5E9}.ci-b{background:#E3F2FD}.ci-p{background:#EDE7F6}.ci-n{background:var(--navy-lt)}.ci-o{background:#FFF3E0}
+.ci-r{background:#FFEBEE}.ci-g{background:#E8F5E9}.ci-b{background:#E3F2FD}.ci-n{background:var(--navy-lt)}.ci-o{background:#FFF3E0}
 .contact-label{font-size:13px;font-weight:600;color:var(--ink)}
 .contact-sub{font-size:11.5px;color:var(--ink-3);margin-top:1px}
 .call-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;white-space:nowrap;border:none;cursor:pointer}
-.cn{background:var(--navy);color:#fff}
-.cr{background:#C62828;color:#fff}
-.cg{background:#2E7D32;color:#fff}
-.cb{background:#0277BD;color:#fff}
-.co{background:var(--cream);color:var(--ink);border:1.5px solid var(--border)!important}
+.cn{background:var(--navy);color:#fff}.cr{background:#C62828;color:#fff}
+.cb{background:#0277BD;color:#fff}.co{background:var(--cream);color:var(--ink);border:1.5px solid var(--border)!important}
 
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(13,40,71,.92);color:#fff;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:500;pointer-events:none;opacity:0;transition:all .22s cubic-bezier(.4,0,.2,1);z-index:999;white-space:nowrap;max-width:90vw}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media(min-width:700px){
-  .tab-nav{padding:0 40px}
-  .tab-btn{font-size:13px;padding:10px 20px}
+  .tab-nav{padding:0 30px}
+  .tab-btn{font-size:12px;padding:10px 18px}
   .tab-panel{max-width:900px;margin-left:auto;margin-right:auto;padding:24px 32px 60px}
 }
 @media(prefers-color-scheme:dark){
@@ -265,12 +255,12 @@
         <span id="jst-clock">--:--</span>
         <span id="trip-day-label">Japan Standard Time</span>
       </div>
-      <span style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.8px;text-transform:uppercase;font-weight:600;display:block;line-height:34px">HC</span>
+      <img id="hc-logo" alt="Happy Camper" height="34">
     </div>
   </div>
   <div class="hdr-names">
-    <div class="hdr-name">Khoa Le · Stephen Osgood</div>
-    <div class="hdr-name2">Mai Le · Mike Cho · and Guests</div>
+    <div class="hdr-name">Khoa Le &middot; Stephen Osgood</div>
+    <div class="hdr-name2">Mai Le &middot; Mike Cho &middot; and Guests</div>
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" data-tab="itinerary">Itinerary</button>
@@ -283,8 +273,8 @@
 
 <div id="main-content">
   <div id="tab-itinerary" class="tab-panel active"></div>
-  <div id="tab-wishlist" class="tab-panel"></div>
-  <div id="tab-visited" class="tab-panel"></div>
+  <div id="tab-wishlist"  class="tab-panel"></div>
+  <div id="tab-visited"   class="tab-panel"></div>
   <div id="tab-utilities" class="tab-panel"></div>
   <div id="tab-emergency" class="tab-panel"></div>
 </div>
@@ -294,356 +284,347 @@
 (function(){
 'use strict';
 
-/* ── CONFIG ───────────────────────────────────────────────────
-   FX_RATE: JPY per 1 USD — from planning canvas (update as needed)
-   LOGO_B64: Happy Camper logo
-──────────────────────────────────────────────────────────── */
-var FX_RATE = 159.54; // Source: planning canvas Nov 2026
-var LOGO_B64 = null; // logo removed for compatibility
+/* ═══════════════════════════════════════════════════════
+   CONFIG
+   FX_RATE: JPY per USD (source: planning canvas)
+   LOGO: inject Happy Camper logo
+═══════════════════════════════════════════════════════ */
+var FX_RATE = 159.54;
+var LOGO_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAApQUlEQVR42u18eXydVZn/9znnvMvdcm/WJm2TbumWtpQ2hVIKtCzFBVRAW8VxxLGMIjIoOqJgGhAFHZlBHBVEcX6ozLSyDAoCAiVQCoWWlu5r2qZN0qw3ufs93/ec5/dHEqiMIrQVnc+HJ5/7ubm59+ac73ue9Xue9wDvyDvyjrwj78jfm1ATIFYuXSqbAPEOHG9BlgLy9X8bBpH+Llf6OLWEVgBMAB/PJJoAsR2gpQCWAbqpqUmFVt17muM4ZVr7O6/ZvHP38OfUDICXAuZ4x/x7APB/ac0qQL+V7/Hw+EeD0TRu9EccIZsMUDTMeQkaY5g3DcT9S7+/uSt79JhvdrwmQMwYWqATDvwxA/i9JUsiKtVdadVN6f3CqlWZoy7K4E1MkgEauZibJ084NTOYqg5FwzXG4Bo3Ev7sV7bvfhrM+PYp08r9zuRPSKo6DoIHVMjp8cZMuK+5pWWgCRDNQ+O9IXhHf+bNfOevCmATIJqFMDdMqntcFb1zAka3UOoZbanbm3a3PvdmJjny/r+eOa82aO/5tWZTaUgm2fcaQ7HEyV/Zvn37iFmvAjSI0DS2Zrtl2btggnJinmhC4a9cv3PPvW801kpALgP09fXjF0W1/qdkRfUXbn7ppb6Rv58IAOVb/cJiQLYwm8WlJTMMaIIJggqXzWxo/alzKkprzlxY/1Tz7k5v5ZA28p9YMHoaQOWiRdHMocMvCsLvy7/2nmVf+uVTd55TV9tGbuil0s7O4EcAbwdMU1OTuMR1be1Ybddt2db81EDq7nPLElu07606d1TNc019fa1/aqylgGwG9DdmzJjk5LJryZiTVC7z3rOqy37/hb7BZBOgWk6AJr7lFGEFoBkgOxy/hYEOGQ3f7wHGD7Rve/7lamv36htnzKhdBugmQL3ecpsASQD3H9p/tdb64Nda267tuPxO3cQsrtu84pfzo9HssG9jAGhubjb98+f7Fee/5/E7Ghutuxctcr+x/9AfYKlvclD4PoiwbeizdLSGNwDcdOGF4Uh2YA1J+YgfT1yaYJ4lc96zN518ckMzEKw8BgU6bgAJ4FWAuHbLliRAP2TPrzWOe0dICCsT6LwK/FMpM7DmhhmTZzcDwXLAAoCmpiZxR2OjtX1EU5gWC0v9BgCaAdwghCFaphdfcQUzs+T16y0AtPWHP4w2Nzeby5ubc5dv2OB/sqWloHsOfKv+1Mb1QaFQ+cMPnRVt/mO/SzMAaiYy9taNqxm03y+v+oYaHLirj/nrAAro7Xzp2oljZw4vsnhbAcRIqgGoFQfa7mHgiBDkFSzrv6NKhnKGC6R1nchkVzdNHn/WnYDfBAh1z92Le9PJe1cRDfmerYvSssv8ngPnMHP4V5/4h3lb7rvnFFq2TBORpnnzfAA8/aPv+6nfuecn7etXV3CqvYL95IpXHvrtpzc/0VItLZt1OuQ3NTWJm6ZOuv+WWVOnAuBlgP7W+NqVrE1CT6j7pNvXtd4juhHSOixIlEBZm0uYXrxl/vzJzYA5HhCPOQozQMsAMe/008PFzsMvk+N8y2SzH3fZnJM1XLSIHCIUEI985Lrd+/6nafa4RFSE4+M27ji8DNA31k/8nC7mr2x433u+O2nO3K/oIOja8cSTNf/w49t+Iisn7AOQSK978QNPAP/u+eTpCl3v7GxvE/fkMzC82AK/oEW+X/UlZMXkw+2fLl7p+9feeFa+7EjWvqRjGNBiGfZScY37j0kYVB7UMo5OtWYqJsYqFpZ4Fh8mMklm/q71YKgbJrUGxlKy4Fk9e/e6U24mTNVgDqMkAcJtKU19EEFZBCiIF8MRgmVdVHmFYSmCxXWJDSlVmEeKl5b5pLr1rCXMW3SuFLKl7p6G4Cl7wVtx/t3x+/d9KS42Iu5r5KK1CZb1xWW/YYuP6Y0blhSwrqaxDL+m/J9q58ZZk07efHCL3HVfqLvt6WJEQlY+GnAHzAhxA7LzL+ZQO62JAHabfqzAoJIEBYIHOIAGRAogdC/AvQAAYDZBBzZQlFiUwmHJ7XJLvlYJ5bEJcNY3aKLH52HgJqilXMLJQ7XFmG8qXH4G4GWOEAtlGcFkdkxb9TK7YJMV9SvuEy3lU1IVGrKiVHU3BpFqRiAJh0CSXJXkBBKL8GJ/AkKnfSHyBAGF8gJGUgW1NIAohRMUMqNDg61VVKJTqz9ypGN3BjEKjS9cMpbSNR5fwE7mZuZqCuWxmL/mf5OKmwLm5Xm6kz7GYNmANGgpnJIqFmUFa0FIwQnJ7XfYw1lYmEFSxJu5YRGF5YmBJhFoILRgakJg1k5cYgHaTl7MsF5M6yAZlM7TfKaGKHYXRsOC0i1LR0GxCnX3+RAXZ5Lpu4i7zV+HaaCAtlJ/QRRQMZ6Z9DxluMGlSmN3JjPi3+xPmeFW/8bT0xJXB0i4ZK7KvI2cYdPl+6Kpfq6YEJoODJaLfODpS4kMt2YbM9mqmrmLqMbKd7q6HGNO3u2RFyuLJbD68QVKM0ld1rJXm9fBg7UbhH6FBi4z9TaSg4MHYMQxbY3d4e8LSJP7NaGCEWVOl+hALJt4TMLRCQmj8Lhx4y2JiWqRV2bBiJCsZCXHOGGgABhSF';
 
+(function(){
+  var el=document.getElementById('hc-logo');
+  if(el&&LOGO_B64){try{el.src='data:image/png;base64,'+LOGO_B64;}catch(e){}}
+}());
 
+/* ═══════════════════════════════════════════════════════
+   BOOKING STATUS RULES
+   confirmed   — name disclosed, link provided  → green
+   requested   — name disclosed, link provided  → cyan
+   self-booked — name disclosed, link provided  → pink
+   suggestion  — name UNDISCLOSED, NO link      → blue
+   walk-in     — name disclosed, link provided  → cream
+═══════════════════════════════════════════════════════ */
 
-
-/* ── TRIP DATA ────────────────────────────────────────────────
-   Source: planning canvas 11.xlsx, PDF itinerary
+/* ═══════════════════════════════════════════════════════
+   TRIP DATA
+   Source: planning canvas 11.xlsx, Nov 2026
    Guests: Khoa Le, Mai Le, Stephen Osgood, Mike Cho
-   Nov 8 – 15, 2026 · Tokyo · 7 nights · 6 hosted days
-──────────────────────────────────────────────────────────── */
+   8 – 15 Nov 2026 · Tokyo · 7 nights
+═══════════════════════════════════════════════════════ */
 var TRIP = {
-  startDate: '2026-11-08',
-  endDate:   '2026-11-15',
+  startDate:'2026-11-08',
+  endDate:  '2026-11-15',
+  days:[
 
-  days: [
-    /* ─── DAY 1 · Sun 8 Nov · Arrival ─── */
+    /* ── DAY 1 · Sun 8 Nov · Arrival ── */
     {
-      date:'2026-11-08', dayNum:1, weekday:'Sunday, 8 November', city:'Tokyo',
-      hotel:'Tokyo — Hotel TBC', hq:'luxury hotel Tokyo',
-      hosted: false,
-      notes:'Arrival day. Private transfer from Haneda on arrival. WhatsApp group active for direct communication throughout. Priority: settle in. Dinner planned as part of the week\'s broader structure.',
+      date:'2026-11-08', dayNum:1, weekday:'Sunday, 8 November',
+      city:'Tokyo', hotel:'Tokyo — Hotel TBC', hq:'luxury hotel Tokyo',
+      hosted:false,
+      notes:'Arrival day. Private transfer from Haneda on arrival. WhatsApp group active throughout. Priority: settle in.',
       stops:[
-        { time:'15:05', title:'Arrive — Haneda Airport (HND)',
-          sub:'Delta DL7 · Private transfer to hotel',
-          type:'flight', badge:'Logistics', badgeType:'logistics',
-          loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo',
-          q:'Haneda Airport Tokyo HND',
-          notes:'Arrival at 15:05. Private car transfer to hotel arranged. Withdraw yen at the 7-Eleven ATM on arrival — essential for cash-only restaurants this week.',
-          alert: null },
-        { time:'~17:00', title:'Check-in · Hotel TBC',
-          sub:'Tokyo',
-          type:'hotel', badge:'Logistics', badgeType:'logistics',
-          loc:'Hotel Tokyo', addr:'Tokyo', q:'luxury hotel Tokyo',
-          notes:'Hotel to be confirmed. WhatsApp group active for arrival day updates.', alert:null },
-        { time:'~19:30', title:'Dinner — To Be Confirmed',
-          sub:'Options under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'Dinner will be planned as part of the week\'s broader structure and communicated via WhatsApp.', alert:null }
+        { time:'15:05', type:'flight', badge:'Logistics', badgeType:'logistics',
+          title:'Arrive — Haneda Airport (HND)',
+          sub:'Delta DL7 · Private car to hotel',
+          loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND',
+          notes:'Arrival 15:05. Private car waiting. Withdraw yen at 7-Eleven ATM on arrival — cash essential all week.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Dinner',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'Happy Camper is working on the selection for this evening. Details will be shared once confirmed.', alert:null }
       ]
     },
 
-    /* ─── DAY 2 · Mon 9 Nov · Hosted · Sushi Meino ─── */
+    /* ── DAY 2 · Mon 9 Nov · Sushi Meino ── */
     {
-      date:'2026-11-09', dayNum:2, weekday:'Monday, 9 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: true,
-      notes:'Hosted day — Tomoko & Gerhard. Sushi Meino at noon is the confirmed lunch anchor.',
+      date:'2026-11-09', dayNum:2, weekday:'Monday, 9 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:false,
+      notes:'Sushi Meino confirmed at noon — one of the group\'s established favourites.',
       stops:[
-        { time:'12:00', title:'Sushi Meino',
+        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Sushi Meino',
           sub:'Lunch · Confirmed',
-          type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           loc:'Sushi Meino Tokyo', addr:'Tokyo', q:'Sushi Meino Tokyo',
-          notes:'A repeat favourite for the group and one of the confirmed anchors of the week. The group has experienced and greatly enjoys this counter.',
+          notes:'A repeat favourite for the group. The decision to return reflects the strength of prior experience at this counter.',
           alert:'No perfume or fragrance at the counter' },
-        { time:'~19:30', title:'Dinner — To Be Confirmed',
-          sub:'Options under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'Dinner being actively developed. Options will be presented via WhatsApp for approval before confirmation.', alert:null }
+        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Dinner',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'Dinner being actively developed. Details will be shared via WhatsApp once confirmed.', alert:null }
       ]
     },
 
-    /* ─── DAY 3 · Tue 10 Nov · Hosted · Sushi Ikko ─── */
+    /* ── DAY 3 · Tue 10 Nov · Hosted · Sushi Ikko ── */
     {
-      date:'2026-11-10', dayNum:3, weekday:'Tuesday, 10 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: true,
-      notes:'Hosted day — Tomoko & Gerhard. Sushi Ikko confirmed at 20:30 — one of the week\'s most important anchors.',
+      date:'2026-11-10', dayNum:3, weekday:'Tuesday, 10 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:true,
+      notes:'Hosted — Tomoko & Gerhard. Sushi Ikko confirmed at 20:30 — a key anchor of the week.',
       stops:[
-        { time:'~13:00', title:'Lunch — To Be Confirmed',
-          sub:'Options under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'Lunch being shaped as the rest of the programme develops. Will be presented for approval via WhatsApp.', alert:null },
-        { time:'20:30', title:'Sushi Ikko',
+        { time:'~13:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Lunch',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'Lunch being shaped as the programme develops. Will be shared for approval via WhatsApp.', alert:null },
+        { time:'20:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Sushi Ikko',
           sub:'Dinner · Confirmed · 20:30',
-          type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           loc:'Sushi Ikko Tokyo', addr:'Tokyo', q:'Sushi Ikko Tokyo',
-          notes:'A proven success for the group and one of the most meaningful repeat anchors of the week. The group has already experienced and greatly enjoyed this counter. The decision to return reflects the strength of that prior experience.',
+          notes:'A proven success for the group and one of the most meaningful repeat anchors of the week. The decision to return reflects the strength of prior experience.',
           alert:'No perfume or fragrance at the counter' }
       ]
     },
 
-    /* ─── DAY 4 · Wed 11 Nov · Shizuoka + Naruse ─── */
+    /* ── DAY 4 · Wed 11 Nov · Hosted · Naruse in Shizuoka ── */
     {
-      date:'2026-11-11', dayNum:4, weekday:'Wednesday, 11 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: false,
-      notes:'Shinkansen to Shizuoka in the morning — an exceptional culinary destination. Naruse confirmed for lunch at 12:30. Light dinner in the evening following the day\'s meals.',
+      date:'2026-11-11', dayNum:4, weekday:'Wednesday, 11 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:true,
+      notes:'Hosted — Tomoko & Gerhard. Shinkansen to Shizuoka for Naruse at lunch, return to Tokyo in the afternoon.',
       stops:[
-        { time:'~08:30', title:'Shinkansen to Shizuoka',
-          sub:'Tokyo Station to Shizuoka · ~50 min',
-          type:'transport', badge:'Logistics', badgeType:'logistics',
+        { time:'~08:30', type:'transport', badge:'Logistics', badgeType:'logistics',
+          title:'Shinkansen to Shizuoka',
+          sub:'Tokyo Station · ~50 min',
           loc:'Tokyo Station', addr:'1-9-1 Marunouchi, Chiyoda City, Tokyo', q:'Tokyo Station Marunouchi',
-          notes:'Shizuoka offers exceptional local cuisine — sea bream, eel, locally sourced seafood, and some of Japan\'s finest green tea. A highly rewarding half-day excursion.', alert:null },
-        { time:'12:30', title:'Naruse',
-          sub:'Shizuoka · Lunch · Confirmed',
-          type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          loc:'Naruse restaurant Shizuoka', addr:'Shizuoka, Japan', q:'Naruse restaurant Shizuoka',
-          notes:'One of the key confirmed lunch anchors of the week. Fits the level and tone of the programme extremely well — a serious, high-quality daytime experience.',
+          notes:'Shizuoka is one of the finest culinary detours from Tokyo — exceptional seafood, local wagyu, and green tea at source.', alert:null },
+        { time:'12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Naruse',
+          sub:'Shizuoka · Lunch · Confirmed · 12:30',
+          loc:'Naruse Shizuoka', addr:'Shizuoka, Japan', q:'Naruse restaurant Shizuoka',
+          notes:'One of the key confirmed anchors of the week. A serious, high-quality lunch experience that fits the tone of the programme perfectly.',
           alert:'No perfume or fragrance at the counter' },
-        { time:'~16:00', title:'Return to Tokyo',
-          sub:'Shinkansen back · Arrive ~17:00',
-          type:'transport', badge:'Logistics', badgeType:'logistics',
+        { time:'~16:00', type:'transport', badge:'Logistics', badgeType:'logistics',
+          title:'Return to Tokyo',
+          sub:'Shinkansen · Arrive ~17:00',
           loc:'Shizuoka Station', addr:'Shizuoka, Japan', q:'Shizuoka Station JR',
-          notes:'Return Shinkansen to Tokyo. Light dinner this evening after the Shizuoka experience.', alert:null },
-        { time:'~19:00', title:'Light Dinner',
-          sub:'To be confirmed · Relaxed evening',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'A lighter evening meal after the Shizuoka day. Options to be shared via WhatsApp.', alert:null }
+          notes:'Return Shinkansen to Tokyo. A light evening after the Shizuoka experience.', alert:null },
+        { time:'~19:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Light Dinner',
+          sub:'Happy Camper selection — relaxed evening',
+          loc:null, addr:null, q:null,
+          notes:'A lighter dinner this evening. Options to be shared via WhatsApp.', alert:null }
       ]
     },
 
-    /* ─── DAY 5 · Thu 12 Nov · Hosted · RestoPizza ─── */
+    /* ── DAY 5 · Thu 12 Nov · RestoPizza ── */
     {
-      date:'2026-11-12', dayNum:5, weekday:'Thursday, 12 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: true,
-      notes:'Hosted day — Tomoko & Gerhard. RestoPizza provides an important tonal counterpoint to the week\'s more formal sushi meals. Priority dinner pursuit: Matsukawa, Amamoto, or Mitei.',
+      date:'2026-11-12', dayNum:5, weekday:'Thursday, 12 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:false,
+      notes:'RestoPizza provides an important tonal counterpoint to the week\'s more formal meals.',
       stops:[
-        { time:'~12:30', title:'RestoPizza',
-          sub:'Lunch · Confirmed',
-          type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+        { time:'~12:30', type:'restaurant', badge:'Requested', badgeType:'requested',
+          title:'RestoPizza',
+          sub:'Lunch · Booking requested',
           loc:'RestoPizza Tokyo', addr:'Tokyo', q:'RestoPizza Tokyo',
-          notes:'Included as an important counterpoint to the more formal sushi meals — variety in tone and format while remaining fully aligned with the group\'s standards. A deliberate and well-placed part of the week.', alert:null },
-        { time:'~19:30', title:'Dinner — Matsukawa · Amamoto · Mitei',
+          notes:'An important and deliberate counterpoint to the formal sushi meals — variety in tone and register while remaining fully aligned with the group\'s standards.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Requested', badgeType:'requested',
+          title:'Dinner — Matsukawa · Amamoto · Mitei',
           sub:'Active priority pursuits',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
           loc:'Tokyo', addr:'Tokyo', q:'Matsukawa restaurant Tokyo',
-          notes:'Priority dinner targets: Matsukawa, Amamoto, and Mitei — each representing a major and ambitious moment if access can be secured. Options presented for approval before any reservation is confirmed.',
+          notes:'Three major dinner targets being actively pursued. Matsukawa, Amamoto, and Mitei each represent a headline dining moment if access can be secured. Options presented for approval before any reservation is confirmed.',
           alert:'No perfume or fragrance at omakase counters' }
       ]
     },
 
-    /* ─── DAY 6 · Fri 13 Nov · Hosted · Sushi Saito ─── */
+    /* ── DAY 6 · Fri 13 Nov · Hosted · Sushi Saito ── */
     {
-      date:'2026-11-13', dayNum:6, weekday:'Friday, 13 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: true,
-      notes:'Hosted day — Tomoko & Gerhard. Sushi Saito is the headline ambition of the week. If secured, this would stand as one of the defining meals of the entire trip.',
+      date:'2026-11-13', dayNum:6, weekday:'Friday, 13 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:true,
+      notes:'Hosted — Tomoko & Gerhard. Sushi Saito confirmed — the headline meal of the week.',
       stops:[
-        { time:'12:00', title:'Sushi Saito',
-          sub:'Lunch · Priority pursuit · 5 seats preferred',
-          type:'restaurant', badge:'Priority Pursuit', badgeType:'requested',
+        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Sushi Saito',
+          sub:'Lunch · Confirmed · 5 seats · 12:00',
           loc:'Sushi Saito Tokyo', addr:'Tokyo', q:'Sushi Saito Tokyo',
-          notes:'One of the great aspirational pillars of this programme. Access requires patience, relationship, and timing. Work to secure this table is ongoing and treated as a top priority. If secured, it would stand as the headline meal of the entire week — a reservation reflecting the ambition of the itinerary and the quality of access this programme delivers.',
-          alert:'⚡ Top priority pursuit · Availability cannot be guaranteed · No fragrance at the counter' },
-        { time:'~19:30', title:'Dinner — To Be Confirmed',
-          sub:'Options under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'Dinner options for this evening being pursued. Will be shared for input and approval as the programme develops.', alert:null }
+          notes:'One of the great headline meals of the entire week. Five seats confirmed for Friday 13 November at 12:00. A reservation that reflects both the ambition of the itinerary and the quality of access this programme delivers.',
+          alert:'No perfume or fragrance at the counter' },
+        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Dinner',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'Dinner for this evening being pursued. Will be shared for input and approval as the programme develops.', alert:null }
       ]
     },
 
-    /* ─── DAY 7 · Sat 14 Nov · Meino · Suetomi ─── */
+    /* ── DAY 7 · Sat 14 Nov · Hosted · Meino · Suetomi ── */
     {
-      date:'2026-11-14', dayNum:7, weekday:'Saturday, 14 November', city:'Tokyo',
-      hotel:'Tokyo', hq:'luxury hotel Tokyo',
-      hosted: false,
-      notes:'Repeat targets Meino and Suetomi remain active priorities for placement across the remaining days.',
+      date:'2026-11-14', dayNum:7, weekday:'Saturday, 14 November',
+      city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
+      hosted:true,
+      notes:'Hosted — Tomoko & Gerhard. Meino and Suetomi remain active repeat-request priorities.',
       stops:[
-        { time:'~13:00', title:'Lunch — To Be Confirmed',
-          sub:'Options under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'Aim: the right rhythm and variety — building on what has already been experienced while ensuring the final days feel fresh and strong.', alert:null },
-        { time:'~19:30', title:'Dinner — Meino · Suetomi',
-          sub:'Repeat favourites under active pursuit',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
+        { time:'~13:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Lunch',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'Ensuring the right rhythm and variety across the final days. Details shared once confirmed.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Requested', badgeType:'requested',
+          title:'Dinner — Sushi Meino · Suetomi',
+          sub:'Repeat favourites · Active pursuit',
           loc:'Tokyo', addr:'Tokyo', q:'Sushi Meino Tokyo',
-          notes:'Both Sushi Meino and Suetomi are repeat requests based on prior success and clear affection. Both are active priority pursuits for placement across remaining days.',
+          notes:'Both Sushi Meino and Suetomi are repeat requests based on prior success. Being actively pursued for placement on this evening.',
           alert:'No fragrance at the counter' }
       ]
     },
 
-    /* ─── DAY 8 · Sun 15 Nov · Final Day · Departure ─── */
+    /* ── DAY 8 · Sun 15 Nov · Final Day · Departure ── */
     {
-      date:'2026-11-15', dayNum:8, weekday:'Sunday, 15 November', city:'Tokyo',
-      hotel:null, hq:null,
-      hosted: false,
-      notes:'Designed as a complete final culinary day. Late-night departure allows the full day for dining. Private transfer from final dinner to Haneda arranged.',
+      date:'2026-11-15', dayNum:8, weekday:'Sunday, 15 November',
+      city:'Tokyo', hotel:null, hq:null,
+      hosted:false,
+      notes:'Designed as a complete final culinary day. Late-night departure allows the full day for dining.',
       stops:[
-        { time:'~12:30', title:'Lunch — Atami',
-          sub:'Final lunch anchor · Tokyo',
-          type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+        { time:'~12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Atami',
+          sub:'Lunch · Confirmed · Final day anchor',
           loc:'Atami Tokyo', addr:'Tokyo', q:'Atami restaurant Tokyo',
-          notes:'A considered and appropriate close to the week\'s daytime dining sequence. The anchor for the final midday meal of the programme.', alert:null },
-        { time:'~19:30', title:'Final Dinner — To Be Confirmed',
-          sub:'Options being planned',
-          type:'restaurant', badge:'Happy Camper Selection', badgeType:'tbd',
-          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'The trip is designed to conclude as a complete culinary day. Options shared via WhatsApp for approval.', alert:null },
-        { time:'~22:30', title:'Transfer to Haneda Airport',
+          notes:'A considered and appropriate close to the week\'s daytime dining sequence.', alert:null },
+        { time:'~19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+          title:'Final Dinner',
+          sub:'Happy Camper selection — details shared once confirmed',
+          loc:null, addr:null, q:null,
+          notes:'The trip concludes as a complete culinary day. Options shared via WhatsApp for approval.', alert:null },
+        { time:'~22:30', type:'transport', badge:'Logistics', badgeType:'logistics',
+          title:'Transfer to Haneda Airport',
           sub:'Private car from dinner venue',
-          type:'transport', badge:'Logistics', badgeType:'logistics',
           loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND',
           notes:'Transfer arranged as part of programme logistics. Allow 45–60 min from central Tokyo.', alert:null },
-        { time:'00:05', title:'Depart Haneda (HND) → Dubai',
+        { time:'00:05', type:'flight', badge:'Logistics', badgeType:'logistics',
+          title:'Depart Haneda (HND) \u2192 Dubai',
           sub:'Monday 16 November · 00:05',
-          type:'flight', badge:'Logistics', badgeType:'logistics',
-          loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND terminal',
-          notes:'Departure to Dubai.', alert:null }
+          loc:'Haneda Airport Tokyo', addr:'Haneda Airport, Ota City, Tokyo', q:'Haneda Airport Tokyo HND',
+          notes:'Departure to Dubai. Monday 16 November.', alert:null }
       ]
     }
-  ] // end days
+
+  ] /* end days */
 };
 
-/* ── WISHLIST DATA (from Excel Wish List sheet — "For 2026/11") ── */
-var WISHLIST = [
-  { name:'Arai',        style:'Sushi · Highly acclaimed counter',                    status:'priority', q:'Arai sushi restaurant Tokyo' },
-  { name:'Sushi Ikko',  style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov',     status:'confirmed',q:'Sushi Ikko Tokyo' },
-  { name:'Naruse',      style:'Kaiseki · Confirmed Wed 11 Nov Shizuoka',             status:'confirmed',q:'Naruse restaurant Shizuoka' },
-  { name:'Amamoto',     style:'Sushi · Active top priority pursuit',                 status:'priority', q:'Amamoto sushi Tokyo' },
-  { name:'Suetomi',     style:'Sushi · Repeat favourite · Active pursuit',           status:'priority', q:'Suetomi sushi Tokyo' },
-  { name:'Sushi Meino', style:'Sushi · Repeat favourite · Confirmed Mon 9 Nov',      status:'confirmed',q:'Sushi Meino Tokyo' },
-  { name:'Sushi Saito', style:'Sushi · Top priority pursuit · 5 seats · Fri 13 Nov', status:'priority', q:'Sushi Saito Tokyo' },
-  { name:'Matsukawa',   style:'Japanese · Major priority pursuit',                   status:'priority', q:'Matsukawa restaurant Tokyo' },
-  { name:'RestoPizza',  style:'Pizza · Confirmed · Day TBC',                         status:'confirmed',q:'RestoPizza Tokyo' },
+/* ── WISH LIST (For 2026/11 from Excel) ── */
+var WISHLIST_TRIP = [
+  { name:'Arai',       style:'Sushi · Priority pursuit', status:'priority', q:'Arai sushi restaurant Tokyo' },
+  { name:'Sushi Ikko', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov 20:30', status:'confirmed', q:'Sushi Ikko Tokyo' },
+  { name:'Naruse',     style:'Japanese · Confirmed Wed 11 Nov 12:30 · Shizuoka', status:'confirmed', q:'Naruse restaurant Shizuoka' },
+  { name:'Amamoto',    style:'Sushi · Active top priority pursuit', status:'requested', q:'Amamoto sushi Tokyo' },
+  { name:'Suetomi',    style:'Sushi · Repeat favourite · Active pursuit Sat 14 Nov', status:'requested', q:'Suetomi sushi Tokyo' },
+  { name:'Sushi Meino',style:'Sushi · Repeat favourite · Confirmed Mon 9 Nov 12:00', status:'confirmed', q:'Sushi Meino Tokyo' },
+  { name:'Sushi Saito',style:'Sushi · Confirmed · 5 seats · Fri 13 Nov 12:00', status:'confirmed', q:'Sushi Saito Tokyo' },
+  { name:'Matsukawa',  style:'Japanese · Major priority pursuit', status:'requested', q:'Matsukawa restaurant Tokyo' },
+  { name:'RestoPizza', style:'Pizza · Requested · Thu 12 Nov', status:'requested', q:'RestoPizza Tokyo' },
 ];
-
 var WISHLIST_LONGTERM = [
-  { name:'Matsukawa',  style:'Japanese · Multi-course · Highly coveted' },
-  { name:'Saito',      style:'Sushi · One of Japan\'s most difficult tables' },
-  { name:'Arai',       style:'Sushi · Long-standing priority' },
-  { name:'Torishiki',  style:'Yakitori · Legendary counter' },
-  { name:'Ishikawa',   style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
-  { name:'Yoroniku',   style:'Yakiniku · Premium wagyu · Visited 2025' },
-  { name:'Amamoto',    style:'Sushi · Very important active target' },
-  { name:'Sugita',     style:'Sushi · Already visited 2025' },
-  { name:'Shunji',     style:'Japanese · Already visited 2025' },
-  { name:'Kohaku',     style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
+  { name:'Matsukawa', style:'Japanese · Multi-course · Highly coveted' },
+  { name:'Saito',     style:'Sushi · Confirmed for this trip' },
+  { name:'Arai',      style:'Sushi · Long-standing priority' },
+  { name:'Torishiki', style:'Yakitori · Legendary counter' },
+  { name:'Ishikawa',  style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
+  { name:'Yoroniku',  style:'Yakiniku · Premium wagyu · Visited 2025' },
+  { name:'Amamoto',   style:'Sushi · Very important active target' },
+  { name:'Sugita',    style:'Sushi · Already visited 2025' },
+  { name:'Shunji',    style:'Japanese · Already visited 2025' },
+  { name:'Kohaku',    style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
 ];
 
-/* ── VISITED DATA (from Excel Visited sheet) ── */
+/* ── VISITED (from Excel Visited sheet) ── */
 var VISITED = {
-  '2025': [
-    { num:1,  meal:'Dinner', type:'Chinese',       name:'Omori Cho Yui' },
-    { num:2,  meal:'Dinner', type:'Chinese',       name:'Sazenka' },
-    { num:3,  meal:'Dinner', type:'Contemporary',  name:'ACA' },
-    { num:4,  meal:'Dinner', type:'Contemporary',  name:'Raw' },
-    { num:5,  meal:'Lunch',  type:'French',        name:'Espiracion' },
-    { num:6,  meal:'Lunch',  type:'French',        name:'Auberge Eaufu' },
-    { num:7,  meal:'Dinner', type:'French',        name:'Auberge Eaufu' },
-    { num:8,  meal:'Dinner', type:'French',        name:'Comptoir Feu' },
-    { num:9,  meal:'Lunch',  type:'Japanese',      name:'Kataori' },
-    { num:10, meal:'Lunch',  type:'Japanese',      name:'Tha Sakai' },
-    { num:11, meal:'Lunch',  type:'Japanese',      name:'Suetomi' },
-    { num:12, meal:'Dinner', type:'Japanese',      name:'Seiju' },
-    { num:13, meal:'Dinner', type:'Japanese',      name:'Nawaya' },
-    { num:14, meal:'Dinner', type:'Japanese',      name:'OKA' },
-    { num:15, meal:'Dinner', type:'Yakiniku',      name:'Yoroniku' },
-    { num:16, meal:'Dinner', type:'Yakiniku',      name:'Myoshi' },
-    { num:17, meal:'Lunch',  type:'Pizza',         name:'Pizza 400°C' },
-    { num:18, meal:'Lunch',  type:'Pizza',         name:'Pizza on 38th' },
-    { num:19, meal:'Lunch',  type:'Pizza',         name:'Urashima Pizza' },
-    { num:20, meal:'Lunch',  type:'Sushi',         name:'Sushi Shunji' },
-    { num:21, meal:'Lunch',  type:'Sushi',         name:'Sugita (4 pax)' },
-    { num:22, meal:'Dinner', type:'Sushi',         name:'Sushi Meino' },
-    { num:23, meal:'Dinner', type:'Sushi',         name:'Ikko' },
+  '2025':[
+    {num:1, meal:'Dinner',type:'Chinese',      name:'Omori Cho Yui'},
+    {num:2, meal:'Dinner',type:'Chinese',      name:'Sazenka'},
+    {num:3, meal:'Dinner',type:'Contemporary', name:'ACA'},
+    {num:4, meal:'Dinner',type:'Contemporary', name:'Raw'},
+    {num:5, meal:'Lunch', type:'French',       name:'Espiracion'},
+    {num:6, meal:'Lunch', type:'French',       name:'Auberge Eaufu'},
+    {num:7, meal:'Dinner',type:'French',       name:'Auberge Eaufu'},
+    {num:8, meal:'Dinner',type:'French',       name:'Comptoir Feu'},
+    {num:9, meal:'Lunch', type:'Japanese',     name:'Kataori'},
+    {num:10,meal:'Lunch', type:'Japanese',     name:'Tha Sakai'},
+    {num:11,meal:'Lunch', type:'Japanese',     name:'Suetomi'},
+    {num:12,meal:'Dinner',type:'Japanese',     name:'Seiju'},
+    {num:13,meal:'Dinner',type:'Japanese',     name:'Nawaya'},
+    {num:14,meal:'Dinner',type:'Japanese',     name:'OKA'},
+    {num:15,meal:'Dinner',type:'Yakiniku',     name:'Yoroniku'},
+    {num:16,meal:'Dinner',type:'Yakiniku',     name:'Myoshi'},
+    {num:17,meal:'Lunch', type:'Pizza',        name:'Pizza 400\u00b0C'},
+    {num:18,meal:'Lunch', type:'Pizza',        name:'Pizza on 38th'},
+    {num:19,meal:'Lunch', type:'Pizza',        name:'Urashima Pizza'},
+    {num:20,meal:'Lunch', type:'Sushi',        name:'Sushi Shunji'},
+    {num:21,meal:'Lunch', type:'Sushi',        name:'Sugita (4 pax)'},
+    {num:22,meal:'Dinner',type:'Sushi',        name:'Sushi Meino'},
+    {num:23,meal:'Dinner',type:'Sushi',        name:'Ikko'},
   ],
-  '2024': [
-    { num:24, meal:'Dinner', type:'Chinese',       name:'Sazenka' },
-    { num:25, meal:'Lunch',  type:'Italian · Pizza',name:'Pizza Marumo' },
-    { num:26, meal:'Dinner', type:'Italian',       name:'Seirinkan' },
-    { num:27, meal:'Lunch',  type:'Japanese',      name:'Atami' },
-    { num:28, meal:'Lunch',  type:'Japanese',      name:'Hiyama' },
-    { num:29, meal:'Lunch',  type:'Japanese',      name:'Kenshin' },
-    { num:30, meal:'Dinner', type:'Japanese',      name:'Takiya' },
-    { num:31, meal:'Dinner', type:'Japanese',      name:'Kiu' },
-    { num:32, meal:'Lunch',  type:'Nordic',        name:'Noma Kyoto' },
-    { num:33, meal:'Dinner', type:'Sushi',         name:'Sushi Meino' },
-    { num:34, meal:'Dinner', type:'Sushi',         name:'Harutaka' },
-    { num:35, meal:'Dinner', type:'Sushi',         name:'Sugita' },
-    { num:36, meal:'Dinner', type:'Sushi',         name:'Hakkoku' },
-    { num:37, meal:'Dinner', type:'Yakiniku',      name:'Myoshi (outside tour)' },
+  '2024':[
+    {num:24,meal:'Dinner',type:'Chinese',       name:'Sazenka'},
+    {num:25,meal:'Lunch', type:'Italian · Pizza',name:'Pizza Marumo'},
+    {num:26,meal:'Dinner',type:'Italian',       name:'Seirinkan'},
+    {num:27,meal:'Lunch', type:'Japanese',      name:'Atami'},
+    {num:28,meal:'Lunch', type:'Japanese',      name:'Hiyama'},
+    {num:29,meal:'Lunch', type:'Japanese',      name:'Kenshin'},
+    {num:30,meal:'Dinner',type:'Japanese',      name:'Takiya'},
+    {num:31,meal:'Dinner',type:'Japanese',      name:'Kiu'},
+    {num:32,meal:'Lunch', type:'Nordic',        name:'Noma Kyoto'},
+    {num:33,meal:'Dinner',type:'Sushi',         name:'Sushi Meino'},
+    {num:34,meal:'Dinner',type:'Sushi',         name:'Harutaka'},
+    {num:35,meal:'Dinner',type:'Sushi',         name:'Sugita'},
+    {num:36,meal:'Dinner',type:'Sushi',         name:'Hakkoku'},
+    {num:37,meal:'Dinner',type:'Yakiniku',      name:'Myoshi (outside tour)'},
   ]
 };
 
 /* ── WEATHER ── */
-var COORDS = { Tokyo:{lat:35.6762,lon:139.6503} };
-function wmo(c) {
-  if(c===0)         return{i:'☀️',d:'Clear sky'};
-  if(c<=2)          return{i:'⛅',d:'Partly cloudy'};
-  if(c===3)         return{i:'☁️',d:'Overcast'};
-  if(c>=45&&c<=48)  return{i:'🌫️',d:'Foggy'};
-  if(c>=51&&c<=67)  return{i:'🌧️',d:'Rain'};
-  if(c>=80&&c<=82)  return{i:'🌦️',d:'Showers'};
-  if(c>=95)         return{i:'⛈️',d:'Thunderstorm'};
+function wmo(c){
+  if(c===0)        return{i:'☀️',d:'Clear sky'};
+  if(c<=2)         return{i:'⛅',d:'Partly cloudy'};
+  if(c===3)        return{i:'☁️',d:'Overcast'};
+  if(c>=45&&c<=48) return{i:'🌫️',d:'Foggy'};
+  if(c>=51&&c<=67) return{i:'🌧️',d:'Rain'};
+  if(c>=80&&c<=82) return{i:'🌦️',d:'Showers'};
+  if(c>=95)        return{i:'⛈️',d:'Thunderstorm'};
   return{i:'🌤️',d:'Mixed'};
 }
-function loadWeather() {
-  var url='https://api.open-meteo.com/v1/forecast'
-    +'?latitude=35.6762&longitude=139.6503'
-    +'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode'
-    +'&timezone=Asia%2FTokyo&forecast_days=16';
+function loadWeather(){
+  var url='https://api.open-meteo.com/v1/forecast?latitude=35.6762&longitude=139.6503&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&timezone=Asia%2FTokyo&forecast_days=16';
   fetch(url).then(function(r){return r.json();}).then(function(data){
     data.daily.time.forEach(function(date,i){
       var el=document.getElementById('wx-'+date);
       if(!el)return;
       var e=wmo(data.daily.weathercode[i]);
-      var maxC=Math.round(data.daily.temperature_2m_max[i]);
-      var minC=Math.round(data.daily.temperature_2m_min[i]);
-      var maxF=Math.round(maxC*9/5+32);
-      var minF=Math.round(minC*9/5+32);
+      var hi=Math.round(data.daily.temperature_2m_max[i]);
+      var lo=Math.round(data.daily.temperature_2m_min[i]);
       var rain=data.daily.precipitation_probability_max[i]||0;
       el.innerHTML='<span class="wx-icon">'+e.i+'</span>'
-        +'<div class="wx-info"><div class="wx-temp">'+maxC+'° / '+minC+'°C · '+e.d+'</div>'
-        +'<div class="wx-desc">Tokyo · November</div></div>'
-        +'<div class="wx-rain">💧 '+rain+'%</div>';
+        +'<div class="wx-info"><div class="wx-temp">'+hi+'° / '+lo+'°C &middot; '+e.d+'</div>'
+        +'<div class="wx-desc">Tokyo &middot; November</div></div>'
+        +'<div class="wx-rain">&#x1F4A7; '+rain+'%</div>';
     });
   }).catch(function(){
     TRIP.days.forEach(function(d){
       var el=document.getElementById('wx-'+d.date);
       if(el)el.innerHTML='<span class="wx-icon">🍂</span>'
-        +'<div class="wx-info"><div class="wx-temp" style="font-size:13px">November Tokyo · 10–18°C</div>'
-        +'<div class="wx-desc">Crisp autumn days · Excellent visibility · Peak ginkgo season</div></div>';
+        +'<div class="wx-info"><div class="wx-temp" style="font-size:13px">November Tokyo &middot; 10–18°C</div>'
+        +'<div class="wx-desc">Crisp autumn &middot; Peak ginkgo season &middot; Excellent visibility</div></div>';
     });
   });
 }
 
 /* ── MAPS ── */
-function gm(q){return q&&q.indexOf('http')===0?q:'https://maps.google.com/?q='+encodeURIComponent(q||'Tokyo Japan');}
-function nav(q){return q&&q.indexOf('http')===0?q:'https://maps.google.com/maps?daddr='+encodeURIComponent(q||'Tokyo Japan')+'&dirflg=d';}
+function gm(q){return(q&&q.indexOf('http')===0)?q:'https://maps.google.com/?q='+encodeURIComponent(q||'Tokyo Japan');}
+function nav(q){return(q&&q.indexOf('http')===0)?q:'https://maps.google.com/maps?daddr='+encodeURIComponent(q||'Tokyo Japan')+'&dirflg=d';}
 
 /* ── TOAST ── */
 var toastTm;
-function showToast(msg){
-  var el=document.getElementById('toast');
-  el.textContent=msg;el.classList.add('show');
-  clearTimeout(toastTm);
-  toastTm=setTimeout(function(){el.classList.remove('show');},2200);
-}
+function showToast(msg){var el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTm);toastTm=setTimeout(function(){el.classList.remove('show');},2200);}
 window.copyAddr=function(di,si){
   var stop=TRIP.days[di].stops[si];
-  var txt=(stop.addr&&stop.addr!=='Tokyo'&&stop.addr!=='Kyoto')?stop.addr:stop.loc;
-  if(navigator.clipboard&&window.isSecureContext){
-    navigator.clipboard.writeText(txt).then(function(){showToast('Address copied');});
-  } else {
-    var ta=document.createElement('textarea');ta.value=txt;ta.style.opacity='0';
-    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-    showToast('Address copied');
-  }
+  var txt=(stop.addr&&stop.addr!=='Tokyo')?stop.addr:stop.loc;
+  if(!txt)return;
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(function(){showToast('Address copied');});}
+  else{var ta=document.createElement('textarea');ta.value=txt;ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Address copied');}
 };
 
 /* ── CLOCK ── */
@@ -655,50 +636,53 @@ function tickClock(){
   var today=d.toISOString().slice(0,10),found=null;
   for(var i=0;i<TRIP.days.length;i++){if(TRIP.days[i].date===today){found=TRIP.days[i];break;}}
   var lbl=document.getElementById('trip-day-label');
-  if(found) lbl.textContent='Day '+found.dayNum+' of 8 · Tokyo';
+  if(found)lbl.textContent='Day '+found.dayNum+' of 8 \u00b7 Tokyo';
   else if(today<TRIP.startDate){var ms=new Date(TRIP.startDate)-new Date(today);lbl.textContent=Math.ceil(ms/86400000)+'d to Tokyo';}
-  else if(today>TRIP.endDate) lbl.textContent='Journey complete · Sayonara!';
+  else if(today>TRIP.endDate)lbl.textContent='Journey complete \u00b7 Sayonara!';
   else lbl.textContent='Japan Standard Time';
 }
 
 /* ── TABS ── */
 document.querySelector('.tab-nav').addEventListener('click',function(e){
-  var btn=e.target.closest('.tab-btn');
-  if(!btn)return;
+  var btn=e.target.closest('.tab-btn');if(!btn)return;
   var name=btn.getAttribute('data-tab');
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-tab')===name);});
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.toggle('active',p.id==='tab-'+name);});
 });
 
 /* ── TOGGLE DAY ── */
-window.toggleDay=function(num){
-  var card=document.getElementById('day-'+num);
-  if(card)card.classList.toggle('open');
-};
+window.toggleDay=function(num){var c=document.getElementById('day-'+num);if(c)c.classList.toggle('open');};
 
 /* ── ESCAPE ── */
 function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-var ICONS={flight:'✈️',transport:'🚄',hotel:'🏨',restaurant:'🍽️',activity:'🎌',market:'🏪',shopping:'🛍️',bar:'🍸'};
+var ICONS={flight:'✈️',transport:'🚄',hotel:'🏨',restaurant:'🍽️',activity:'🎌',market:'🏪',suggestion:'🍽️'};
 
-/* ── RENDER STOP ── */
+/* ── RENDER STOP ──────────────────────────────────────────
+   KEY RULE: suggestion type → name hidden, NO map links
+────────────────────────────────────────────────────────── */
 function renderStop(stop,di,si){
-  var icon=ICONS[stop.type]||'📍';
-  var bc=stop.badgeType||'';
-  var badge=stop.badge?'<span class="stop-badge '+bc+'">'+esc(stop.badge)+'</span>':'';
+  var isSuggestion=stop.badgeType==='suggestion';
+  var isActionable=!isSuggestion&&(stop.badgeType==='confirmed'||stop.badgeType==='logistics'||stop.badgeType==='requested'||stop.badgeType==='self-booked'||stop.badgeType==='walk-in');
   var hasLoc=!!(stop.q||stop.loc);
-  var isActionable=(stop.badgeType==='confirmed'||stop.badgeType==='logistics'||stop.badgeType==='requested'||stop.badgeType==='self-booked'||stop.badgeType==='walk-in');
+  var icon=ICONS[stop.type]||'📍';
+  var badge=stop.badge?'<span class="stop-badge '+stop.badgeType+'">'+esc(stop.badge)+'</span>':'';
+  var dotClass=isSuggestion?'t-suggestion':('t-'+(stop.type||'restaurant'));
+  var cardClass=isSuggestion?' is-suggestion':'';
+
+  /* Map buttons: only active for non-suggestion types with a location */
   var mapHTML=isActionable&&hasLoc
-    ?'<a href="'+gm(stop.q)+'" target="_blank" rel="noopener" class="map-btn mp">📍 Maps</a>'
-      +'<a href="'+nav(stop.q)+'" target="_blank" rel="noopener" class="map-btn">🧭 Nav</a>'
+    ?'<a href="'+gm(stop.q)+'" target="_blank" rel="noopener" class="map-btn mp">&#x1F4CD; Maps</a>'
+      +'<a href="'+nav(stop.q)+'" target="_blank" rel="noopener" class="map-btn">&#x1F9ED; Nav</a>'
       +'<button class="map-btn" onclick="copyAddr('+di+','+si+')">&#10063; Copy</button>'
-    :'<span class="map-btn map-disabled">📍</span>'
-      +'<span class="map-btn map-disabled">🧭</span>'
+    :'<span class="map-btn map-disabled">&#x1F4CD;</span>'
+      +'<span class="map-btn map-disabled">&#x1F9ED;</span>'
       +'<span class="map-btn map-disabled">&#10063;</span>';
+
   return '<div class="stop-item">'
     +'<div class="stop-time">'+(stop.time?stop.time.replace('~',''):'')+'</div>'
-    +'<div class="stop-dot t-'+stop.type+'"></div>'
-    +'<div class="stop-card"><div class="stop-top">'
+    +'<div class="stop-dot '+dotClass+'"></div>'
+    +'<div class="stop-card'+cardClass+'"><div class="stop-top">'
     +'<div class="stop-title-wrap">'
     +'<div class="stop-title"><span class="stop-icon">'+icon+'</span>'+esc(stop.title)+'</div>'
     +(stop.sub?'<div class="stop-subtitle">'+esc(stop.sub)+'</div>':'')
@@ -713,23 +697,22 @@ function renderStop(stop,di,si){
 function renderItinerary(){
   var today=isoToday();
   var html='<div class="trip-banner">'
-    +'<div class="trip-banner-kana">A Private Culinary Journey · Happy Camper Ltd.</div>'
+    +'<div class="trip-banner-kana">A Private Culinary Journey &middot; Happy Camper Ltd.</div>'
     +'<h2>Tokyo</h2>'
-    +'<div class="banner-dates">8 – 15 November 2026 · Four Guests · 7 Nights</div>'
+    +'<div class="banner-dates">8 – 15 November 2026 &middot; Four Guests &middot; 7 Nights</div>'
     +'<div class="banner-chips">'
-    +'<span class="banner-chip">🍣 Sushi Ikko · Confirmed</span>'
-    +'<span class="banner-chip">🍽 Naruse · Confirmed</span>'
-    +'<span class="banner-chip priority">⚡ Sushi Saito · Priority</span>'
-    +'<span class="banner-chip">🍕 RestoPizza · Confirmed</span>'
-    +'<span class="banner-chip">📅 6 Hosted Days</span>'
-    +'<span class="banner-chip">🍂 Autumn Tokyo</span>'
+    +'<span class="banner-chip confirmed">&#x1F363; Sushi Saito &middot; Confirmed</span>'
+    +'<span class="banner-chip confirmed">&#x1F363; Sushi Ikko &middot; Confirmed</span>'
+    +'<span class="banner-chip confirmed">&#x1F35C; Naruse &middot; Confirmed</span>'
+    +'<span class="banner-chip">&#x1F4C5; 6 Hosted Days</span>'
+    +'<span class="banner-chip">&#x1F342; Autumn Tokyo</span>'
     +'</div></div>'
     +'<div class="booking-legend">'
     +'<span class="bl-item"><span class="bl-dot confirmed"></span>Confirmed</span>'
     +'<span class="bl-item"><span class="bl-dot requested"></span>Requested</span>'
-    +'<span class="bl-item"><span class="bl-dot walk-in"></span>Walk-in</span>'
+    +'<span class="bl-item"><span class="bl-dot self-booked"></span>Self-booked</span>'
     +'<span class="bl-item"><span class="bl-dot suggestion"></span>Suggestion</span>'
-    +'<span class="bl-item"><span class="bl-dot tbd"></span>HC Selection</span>'
+    +'<span class="bl-item"><span class="bl-dot walk-in"></span>Walk-in</span>'
     +'</div>'
     +'<div class="section-label">Daily Itinerary</div>';
 
@@ -737,85 +720,69 @@ function renderItinerary(){
     var isToday=day.date===today;
     var isPast=day.date<today;
     var isOpen=isToday||(today<TRIP.startDate&&idx===0);
-    var dining=day.stops.filter(function(s){return s.type==='restaurant'||s.type==='bar';}).length;
-    html+='<div class="day-card'
-      +(isToday?' is-today':'')+(isPast?' is-past':'')
-      +(isOpen?' open':'')
-      +'" id="day-'+day.dayNum+'" style="animation-delay:'+(idx*.04).toFixed(2)+'s">'
+    var dining=day.stops.filter(function(s){return s.type==='restaurant'||s.type==='suggestion';}).length;
+    html+='<div class="day-card'+(isToday?' is-today':'')+(isPast?' is-past':'')+(isOpen?' open':'')+'" id="day-'+day.dayNum+'" style="animation-delay:'+(idx*.04).toFixed(2)+'s">'
       +'<div class="day-header" onclick="toggleDay('+day.dayNum+')">'
       +'<div class="day-num">D'+day.dayNum+'</div>'
       +'<div class="day-header-info">'
       +'<div class="day-name">'+esc(day.weekday)+'</div>'
-      +'<div class="day-sub">'
-      +'<span class="day-city-badge">'+day.city+'</span>'
+      +'<div class="day-sub"><span class="day-city-badge">'+day.city+'</span>'
       +(isToday?'<span class="today-pill">TODAY</span>':'')
       +(day.hosted?'<span class="host-pill">Hosted</span>':'')
       +(dining>0?'<span>'+dining+' dining</span>':'')
-      +'</div></div>'
-      +'<span class="day-chevron">&#9662;</span>'
+      +'</div></div><span class="day-chevron">&#9662;</span>'
       +'</div>'
       +'<div class="day-body"><div class="day-body-inner">';
     if(day.hotel){
       html+='<div class="hotel-bar">'
-        +'<div style="font-size:15px">🏨</div>'
+        +'<div style="font-size:15px">&#x1F3E8;</div>'
         +'<div style="flex:1"><div class="hb-name">'+esc(day.hotel)+'</div>'
-        +'<div class="hb-detail">'+day.city+' · Night '+day.dayNum+'</div></div>'
-        +(day.hq?'<a href="'+gm(day.hq)+'" target="_blank" rel="noopener" class="hb-link">📍 Map</a>':'')
+        +'<div class="hb-detail">'+day.city+' &middot; Night '+day.dayNum+'</div></div>'
+        +(day.hq?'<a href="'+gm(day.hq)+'" target="_blank" rel="noopener" class="hb-link">&#x1F4CD; Map</a>':'')
         +'</div>';
     }
-    if(day.notes){html+='<div class="day-note-bar">'+esc(day.notes)+'</div>';}
-    html+='<div class="weather-widget" id="wx-'+day.date+'"><span class="wx-loading">Loading weather…</span></div>'
+    if(day.notes)html+='<div class="day-note-bar">'+esc(day.notes)+'</div>';
+    html+='<div class="weather-widget" id="wx-'+day.date+'"><span class="wx-loading">Loading weather&#x2026;</span></div>'
       +'<div class="timeline">';
-    day.stops.forEach(function(stop,si){html+=renderStop(stop,idx,si);});
+    day.stops.forEach(function(s,si){html+=renderStop(s,idx,si);});
     html+='</div></div></div></div>';
   });
+
   document.getElementById('tab-itinerary').innerHTML=html;
   TRIP.days.forEach(function(d){
     var el=document.getElementById('wx-'+d.date);
-    if(el)el.innerHTML='<span class="wx-icon">🍂</span>'
-      +'<div class="wx-info"><div class="wx-temp" style="font-size:13px">November Tokyo · 10–18°C</div>'
-      +'<div class="wx-desc">Crisp autumn · Peak ginkgo foliage · Excellent visibility</div></div>';
+    if(el)el.innerHTML='<span class="wx-icon">&#x1F342;</span>'
+      +'<div class="wx-info"><div class="wx-temp" style="font-size:13px">November Tokyo &middot; 10–18&deg;C</div>'
+      +'<div class="wx-desc">Crisp autumn &middot; Peak ginkgo season &middot; Excellent visibility</div></div>';
   });
   try{loadWeather();}catch(e){}
 }
 
-/* ── RENDER WISHLIST ── */
+/* ── RENDER WISH LIST ── */
 function renderWishlist(){
-  var html='<div class="wishlist-banner">'
-    +'<h2>&#x1F374; Wish List — Nov 2026</h2>'
-    +'<p>Current programme targets and long-term priority restaurants</p>'
-    +'</div>'
-    +'<div class="section-label">This Trip — November 2026</div>'
-    +'<div class="wish-card">';
-  WISHLIST.forEach(function(w,i){
+  var html='<div class="wishlist-banner"><h2>&#x1F374; Wish List &mdash; Nov 2026</h2><p>Programme targets and long-term priority restaurants</p></div>'
+    +'<div class="section-label">This Trip &mdash; November 2026</div><div class="wish-card">';
+  WISHLIST_TRIP.forEach(function(w,i){
     if(i>0)html+='<div class="wish-divider"></div>';
-    var stCls=w.status==='confirmed'?'confirmed':w.status==='priority'?'priority':'';
-    var stLabel=w.status==='confirmed'?'✓ Confirmed':w.status==='priority'?'⚡ Priority':'—';
+    var stCls=w.status==='confirmed'?'confirmed':w.status==='requested'?'requested':'priority';
+    var stLabel=w.status==='confirmed'?'&#x2713; Confirmed':w.status==='requested'?'Requested':'&#x26A1; Priority';
     html+='<div class="wish-row">'
       +'<div class="wish-num">'+(i+1)+'</div>'
-      +'<div class="wish-info">'
-      +'<div class="wish-name">'+esc(w.name)+'</div>'
+      +'<div class="wish-info"><div class="wish-name">'+esc(w.name)+'</div>'
       +'<div class="wish-style">'+esc(w.style)+'</div>'
-      +'<span class="wish-status '+stCls+'">'+stLabel+'</span>'
-      +'</div>'
-      +'<div class="wish-actions">'
-      +'<a href="'+gm(w.q)+'" target="_blank" rel="noopener" class="wish-map-btn">📍</a>'
-      +'</div></div>';
+      +'<span class="wish-status '+stCls+'">'+stLabel+'</span></div>'
+      +'<div class="wish-actions"><a href="'+gm(w.q)+'" target="_blank" rel="noopener" class="wish-map-btn">&#x1F4CD;</a></div>'
+      +'</div>';
   });
-  html+='</div>'
-    +'<div class="section-label">Long-term Priority List</div>'
-    +'<div class="wish-card">';
+  html+='</div><div class="section-label">Long-term Priority</div><div class="wish-card">';
   WISHLIST_LONGTERM.forEach(function(w,i){
     if(i>0)html+='<div class="wish-divider"></div>';
     html+='<div class="wish-row">'
       +'<div class="wish-num" style="background:linear-gradient(135deg,#0D2847,#071B35)">'+(i+1)+'</div>'
-      +'<div class="wish-info">'
-      +'<div class="wish-name">'+esc(w.name)+'</div>'
-      +'<div class="wish-style">'+esc(w.style)+'</div>'
-      +'</div>'
-      +'<div class="wish-actions">'
-      +'<a href="'+gm(w.name+' restaurant Tokyo')+'" target="_blank" rel="noopener" class="wish-map-btn">📍</a>'
-      +'</div></div>';
+      +'<div class="wish-info"><div class="wish-name">'+esc(w.name)+'</div>'
+      +'<div class="wish-style">'+esc(w.style)+'</div></div>'
+      +'<div class="wish-actions"><a href="'+gm(w.name+' restaurant Tokyo')+'" target="_blank" rel="noopener" class="wish-map-btn">&#x1F4CD;</a></div>'
+      +'</div>';
   });
   html+='</div>';
   document.getElementById('tab-wishlist').innerHTML=html;
@@ -823,23 +790,18 @@ function renderWishlist(){
 
 /* ── RENDER VISITED ── */
 function renderVisited(){
-  var html='<div class="visited-banner">'
-    +'<h2>✓ Previously Visited</h2>'
-    +'<p>'+((VISITED['2025']||[]).length+(VISITED['2024']||[]).length)+' meals across 2024 – 2025 · Japan</p>'
-    +'</div>';
+  var total=(VISITED['2025']||[]).length+(VISITED['2024']||[]).length;
+  var html='<div class="visited-banner"><h2>&#x2713; Previously Visited</h2><p>'+total+' meals across 2024 &ndash; 2025 &middot; Japan</p></div>';
   Object.keys(VISITED).sort(function(a,b){return b-a;}).forEach(function(year){
-    html+='<div class="visited-year">'+year+'</div>';
-    html+='<div class="visited-card">';
+    html+='<div class="visited-year">'+year+'</div><div class="visited-card">';
     VISITED[year].forEach(function(v,i){
       if(i>0)html+='<div class="wish-divider"></div>';
       var mCls=v.meal==='Lunch'?'mb-lunch':'mb-dinner';
       html+='<div class="visited-row">'
         +'<div class="visited-num">'+v.num+'</div>'
-        +'<div class="visited-info">'
-        +'<div class="visited-name">'+esc(v.name)+'<span class="visited-meal-badge '+mCls+'">'+v.meal+'</span></div>'
-        +'<div class="visited-meta">'+esc(v.type)+'</div>'
-        +'</div>'
-        +'<a href="'+gm(v.name+' restaurant Tokyo')+'" target="_blank" rel="noopener" class="wish-map-btn" style="font-size:16px;padding:4px 8px">📍</a>'
+        +'<div class="visited-info"><div class="visited-name">'+esc(v.name)+'<span class="visited-meal-badge '+mCls+'">'+v.meal+'</span></div>'
+        +'<div class="visited-meta">'+esc(v.type)+'</div></div>'
+        +'<a href="'+gm(v.name+' restaurant Japan')+'" target="_blank" rel="noopener" class="wish-map-btn" style="font-size:16px;padding:4px 8px">&#x1F4CD;</a>'
         +'</div>';
     });
     html+='</div>';
@@ -852,49 +814,45 @@ function renderUtilities(){
   document.getElementById('tab-utilities').innerHTML=''
     +'<div class="section-label">Currency Converter</div>'
     +'<div class="util-card"><div class="util-card-title">JPY &#8596; USD</div>'
-    +'<div class="fx-row"><div class="fx-group"><div class="fx-label">🇯🇵 Japanese Yen</div>'
-    +'<input class="fx-input" id="fx-jpy" type="number" inputmode="numeric" value="10000"></div>'
+    +'<div class="fx-row">'
+    +'<div class="fx-group"><div class="fx-label">&#x1F1EF;&#x1F1F5; Japanese Yen</div><input class="fx-input" id="fx-jpy" type="number" inputmode="numeric" value="10000"></div>'
     +'<button class="fx-swap-btn" id="fx-swap">&#8651;</button>'
-    +'<div class="fx-group"><div class="fx-label">🇺🇸 US Dollar</div>'
-    +'<input class="fx-input" id="fx-usd" type="number" inputmode="decimal"></div></div>'
-    +'<div class="fx-rate-note">Rate: 1 USD = '+FX_RATE+' JPY (planning canvas) · Update FX_RATE in script</div></div>'
+    +'<div class="fx-group"><div class="fx-label">&#x1F1FA;&#x1F1F8; US Dollar</div><input class="fx-input" id="fx-usd" type="number" inputmode="decimal"></div>'
+    +'</div><div class="fx-rate-note">Rate: 1 USD = '+FX_RATE+' JPY &middot; Source: planning canvas</div></div>'
     +'<div class="section-label">Programme Summary</div>'
     +'<div class="util-card" style="background:var(--navy-lt);border-color:rgba(13,40,71,.15)">'
     +'<div class="util-card-title" style="color:var(--navy)">Programme Investment</div>'
     +'<ul class="info-list">'
-    +'<li><span class="info-emoji">📋</span><div class="info-text"><strong>Arrangement Fee</strong>USD 10,000 — Planning, booking strategy, reservation access</div></li>'
-    +'<li><span class="info-emoji">🤝</span><div class="info-text"><strong>Hosting Fee</strong>USD 6,000 — 4 hosted days on-the-ground (4 × $1,500)</div></li>'
-    +'<li><span class="info-emoji">🍽</span><div class="info-text"><strong>Estimated Dining & Movement</strong>~USD 32,000 — 14 meals (8 high level, 4 mid, 2 casual)</div></li>'
-    +'<li><span class="info-emoji">✦</span><div class="info-text" style="font-size:15px;font-weight:600;color:var(--navy)"><strong>Total Agreed Price</strong>USD 48,100</div></li>'
+    +'<li><span class="info-emoji">&#x1F4CB;</span><div class="info-text"><strong>Arrangement Fee</strong>USD 10,000 &mdash; Planning, booking strategy, reservation access</div></li>'
+    +'<li><span class="info-emoji">&#x1F91D;</span><div class="info-text"><strong>Hosting Fee</strong>USD 6,000 &mdash; 4 hosted days (4 &times; $1,500)</div></li>'
+    +'<li><span class="info-emoji">&#x1F37D;</span><div class="info-text"><strong>Estimated Dining &amp; Movement</strong>~USD 32,000 &mdash; 14 meals</div></li>'
+    +'<li><span class="info-emoji">&#x2736;</span><div class="info-text" style="font-size:15px;font-weight:600;color:var(--navy)"><strong>Total Agreed</strong>USD 48,100</div></li>'
     +'</ul>'
-    +'<div style="font-size:11px;color:var(--ink-3);margin-top:8px;line-height:1.6">Excludes: international flights, hotel accommodation, alcohol & beverages, personal expenses.</div>'
+    +'<div style="font-size:11px;color:var(--ink-3);margin-top:8px">Excludes: flights, hotel, alcohol &amp; beverages, personal expenses.</div>'
     +'</div>'
     +'<div class="section-label">Quick Reference</div>'
     +'<div class="util-card"><ul class="info-list">'
-    +'<li><span class="info-emoji">💴</span><div class="info-text"><strong>Cash is essential</strong>Carry 50,000–80,000 ¥/person. ATMs at 7-Eleven and Japan Post accept foreign cards reliably.</div></li>'
-    +'<li><span class="info-emoji">🍂</span><div class="info-text"><strong>November in Tokyo</strong>Crisp, clear autumn days — typically 10–18°C. Peak ginkgo season. One of the best times to visit.</div></li>'
-    +'<li><span class="info-emoji">📱</span><div class="info-text"><strong>Suica (Mobile Wallet)</strong>Wallet app → tap + → search Suica. Covers all Tokyo subway, bus, and JR lines.</div></li>'
-    +'<li><span class="info-emoji">⏰</span><div class="info-text"><strong>Time Zone: JST = UTC+9</strong>No daylight saving. 14 hours ahead of New York, 17 ahead of LA.</div></li>'
-    +'<li><span class="info-emoji">🔌</span><div class="info-text"><strong>Electricity: 100V · Type A</strong>European visitors need a voltage converter.</div></li>'
-    +'<li><span class="info-emoji">📡</span><div class="info-text"><strong>eSIM Recommended</strong>Activate before landing. Providers: Airalo, HolaFly, YO.</div></li>'
-    +'<li><span class="info-emoji">📞</span><div class="info-text"><strong>Happy Camper</strong>+81 90 6158 9006 · hello@happycamper.food</div></li>'
+    +'<li><span class="info-emoji">&#x1F4B4;</span><div class="info-text"><strong>Cash is essential</strong>Carry 50,000&ndash;80,000 &yen;/person. ATMs at 7-Eleven and Japan Post accept foreign cards.</div></li>'
+    +'<li><span class="info-emoji">&#x1F342;</span><div class="info-text"><strong>November in Tokyo</strong>Crisp, clear autumn: 10&ndash;18&deg;C. Peak ginkgo season. One of the best times to visit.</div></li>'
+    +'<li><span class="info-emoji">&#x1F4F1;</span><div class="info-text"><strong>Suica (Mobile Wallet)</strong>Wallet app &rarr; tap + &rarr; search Suica. Covers all Tokyo subway, bus, and JR.</div></li>'
+    +'<li><span class="info-emoji">&#x23F0;</span><div class="info-text"><strong>Time Zone: JST = UTC+9</strong>No daylight saving. 14 h ahead of New York, 17 h ahead of LA.</div></li>'
+    +'<li><span class="info-emoji">&#x1F50C;</span><div class="info-text"><strong>Electricity: 100V &middot; Type A</strong>European visitors need a voltage converter.</div></li>'
+    +'<li><span class="info-emoji">&#x1F4E1;</span><div class="info-text"><strong>eSIM Recommended</strong>Activate before landing: Airalo, HolaFly, or YO.</div></li>'
     +'</ul></div>'
     +'<div class="section-label">Dining Etiquette</div>'
     +'<div class="util-card">'
-    +'<div class="rule-item"><span class="rule-icon">🚫</span><div class="rule-text"><strong>No Fragrance — Critical</strong>Avoid all perfume, cologne, and scented products on every dining day. Even light fragrance disrupts the chef at omakase counters. This applies to scented hair products, laundry detergents, and mints.</div></div>'
-    +'<div class="rule-item"><span class="rule-icon">⏰</span><div class="rule-text"><strong>Punctuality</strong>Arrive on time or early — the meal begins simultaneously for all guests. Tokyo restaurants are often in quiet back streets; allow generous transfer time.</div></div>'
-    +'<div class="rule-item"><span class="rule-icon">💍</span><div class="rule-text"><strong>Protect the Counter</strong>Remove rings, bracelets, and watches at sushi counters — many are precious single-piece Hinoki cypress.</div></div>'
-    +'<div class="rule-item"><span class="rule-icon">💰</span><div class="rule-text"><strong>No Tipping</strong>Not customary in Japan. Say <em>Gochisousama deshita</em> after the meal — deeply appreciated by the chef.</div></div>'
-    +'<div class="rule-item"><span class="rule-icon">🔒</span><div class="rule-text"><strong>Reservations are Firm</strong>Happy Camper\'s access is built on years of trust with specific chefs. Once confirmed, reservations are firm commitments — cancellations damage relationships built over many seasons.</div></div>'
+    +'<div class="rule-item"><span class="rule-icon">&#x1F6AB;</span><div class="rule-text"><strong>No Fragrance &mdash; Critical</strong>Avoid all perfume, cologne, scented hair products, and fragranced detergents on every dining day. Even a trace of fragrance disrupts the chef and other guests at the counter.</div></div>'
+    +'<div class="rule-item"><span class="rule-icon">&#x23F0;</span><div class="rule-text"><strong>Punctuality</strong>Arrive on time or early &mdash; the meal begins simultaneously for all. Tokyo restaurants are often in quiet back streets; allow generous transfer time.</div></div>'
+    +'<div class="rule-item"><span class="rule-icon">&#x1F48D;</span><div class="rule-text"><strong>Protect the Counter</strong>Remove rings, bracelets, and watches at sushi counters &mdash; many are precious single-piece Hinoki cypress.</div></div>'
+    +'<div class="rule-item"><span class="rule-icon">&#x1F4B0;</span><div class="rule-text"><strong>No Tipping</strong>Not customary in Japan. Say <em>Gochisousama deshita</em> after every meal &mdash; deeply appreciated by the chef.</div></div>'
+    +'<div class="rule-item"><span class="rule-icon">&#x1F512;</span><div class="rule-text"><strong>Reservations are Firm</strong>Happy Camper\'s access is built on years of trust. Once confirmed, reservations are commitments &mdash; cancellations damage relationships built over many seasons.</div></div>'
     +'</div>';
   var jEl=document.getElementById('fx-jpy'),uEl=document.getElementById('fx-usd');
   function fJ(){var v=parseFloat(jEl.value);uEl.value=isNaN(v)?'':(v/FX_RATE).toFixed(2);}
   function fU(){var v=parseFloat(uEl.value);jEl.value=isNaN(v)?'':String(Math.round(v*FX_RATE));}
   jEl.addEventListener('input',fJ);uEl.addEventListener('input',fU);
   document.getElementById('fx-swap').addEventListener('click',function(){
-    var t=jEl.value;
-    jEl.value=uEl.value?String(Math.round(parseFloat(uEl.value)*FX_RATE)):'';
-    uEl.value=t?(parseFloat(t)/FX_RATE).toFixed(2):'';
+    var t=jEl.value;jEl.value=uEl.value?String(Math.round(parseFloat(uEl.value)*FX_RATE)):'';uEl.value=t?(parseFloat(t)/FX_RATE).toFixed(2):'';
   });
   fJ();
 }
@@ -902,38 +860,33 @@ function renderUtilities(){
 /* ── RENDER EMERGENCY ── */
 function renderEmergency(){
   document.getElementById('tab-emergency').innerHTML=''
-    +'<div class="emergency-banner"><h2>Emergency &amp; Contacts</h2><p>Tokyo · November 2026 · Japan has excellent emergency services</p></div>'
+    +'<div class="emergency-banner"><h2>Emergency &amp; Contacts</h2><p>Tokyo &middot; November 2026 &middot; Japan has excellent emergency services</p></div>'
     +'<div class="section-label">Emergency Numbers</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">🚨</div><div><div class="contact-label">Police</div><div class="contact-sub">All emergency police calls</div></div></div><a href="tel:110" class="call-btn cr">📞 110</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">🚑</div><div><div class="contact-label">Ambulance &amp; Fire</div><div class="contact-sub">Medical emergencies</div></div></div><a href="tel:119" class="call-btn cr">📞 119</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">&#x1F6A8;</div><div><div class="contact-label">Police</div><div class="contact-sub">All emergency police calls</div></div></div><a href="tel:110" class="call-btn cr">&#x1F4DE; 110</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">&#x1F691;</div><div><div class="contact-label">Ambulance &amp; Fire</div><div class="contact-sub">Medical emergencies</div></div></div><a href="tel:119" class="call-btn cr">&#x1F4DE; 119</a></div>'
     +'</div>'
-    +'<div class="section-label">Happy Camper — Your Team</div>'
+    +'<div class="section-label">Happy Camper &mdash; Your Team</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Happy Camper (Tomoko)</div><div class="contact-sub">24/7 trip support · All hosted days</div></div></div><a href="tel:+819061589006" class="call-btn cn">📞 Call</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Happy Camper (Gerhard)</div><div class="contact-sub">Programme director · WhatsApp group</div></div></div><a href="tel:+818069892107" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">&#x1F33F;</div><div><div class="contact-label">Tomoko &mdash; Tokyo Guide</div><div class="contact-sub">Hosted days &middot; All Tokyo</div></div></div><a href="tel:+819061589006" class="call-btn cn">&#x1F4DE; Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">&#x1F33F;</div><div><div class="contact-label">Gerhard &mdash; Happy Camper</div><div class="contact-sub">Programme director &middot; WhatsApp group</div></div></div><a href="tel:+818069892107" class="call-btn cn">&#x1F4DE; Call</a></div>'
     +'</div>'
-    +'<div class="section-label">Medical — Tokyo</div>'
+    +'<div class="section-label">Medical &mdash; Tokyo</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-b">🏥</div><div><div class="contact-label">St. Luke\'s International Hospital</div><div class="contact-sub">English-speaking · Central Tokyo · Tsukiji</div></div></div><a href="tel:+81335507166" class="call-btn cb">📞 Call</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-b">🏥</div><div><div class="contact-label">Tokyo Midtown Medical Center</div><div class="contact-sub">English staff · Roppongi · +81 3 5413 0080</div></div></div><a href="tel:+81354130080" class="call-btn cb">📞 Call</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-b">🏥</div><div><div class="contact-label">International Medical Center Tokyo</div><div class="contact-sub">English-speaking · Roppongi Hills</div></div></div><a href="tel:+81354121171" class="call-btn cb">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-b">&#x1F3E5;</div><div><div class="contact-label">St. Luke\'s International Hospital</div><div class="contact-sub">English-speaking &middot; Tsukiji</div></div></div><a href="tel:+81335507166" class="call-btn cb">&#x1F4DE; Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-b">&#x1F3E5;</div><div><div class="contact-label">Tokyo Midtown Medical Center</div><div class="contact-sub">English staff &middot; Roppongi</div></div></div><a href="tel:+81354130080" class="call-btn cb">&#x1F4DE; Call</a></div>'
     +'</div>'
-    +'<div class="section-label">Departure Details</div>'
+    +'<div class="section-label">Departure</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-o">✈️</div><div><div class="contact-label">Depart Haneda (HND) → Dubai</div><div class="contact-sub">00:05 Monday 16 November 2026</div></div></div><a href="'+gm('Haneda Airport Tokyo Terminal 3')+'" target="_blank" class="call-btn" style="background:#0D2847;color:#fff">📍 Maps</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-o">🚖</div><div><div class="contact-label">Airport Transfer</div><div class="contact-sub">Arranged from final dinner venue to HND</div></div></div><span class="call-btn co">Via HC</span></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-o">&#x2708;&#xFE0F;</div><div><div class="contact-label">Depart Haneda (HND) &rarr; Dubai</div><div class="contact-sub">00:05 Monday 16 November 2026</div></div></div><a href="'+gm('Haneda Airport Tokyo Terminal 3')+'" target="_blank" class="call-btn cn" style="font-size:12px">&#x1F4CD; Map</a></div>'
     +'</div>'
     +'<div class="section-label">Japanese Phrases</div>'
     +'<div class="util-card"><ul class="info-list">'
-    +'<li><span class="info-emoji">🙏</span><div class="info-text"><strong>Arigatou gozaimasu</strong>Thank you very much</div></li>'
-    +'<li><span class="info-emoji">😊</span><div class="info-text"><strong>Sumimasen</strong>Excuse me / Sorry (most useful word)</div></li>'
-    +'<li><span class="info-emoji">🍽️</span><div class="info-text"><strong>Gochisousama deshita</strong>Thank you for the meal — always say after dining</div></li>'
-    +'<li><span class="info-emoji">📍</span><div class="info-text"><strong>~ wa doko desu ka?</strong>Where is ~? (insert place name)</div></li>'
-    +'<li><span class="info-emoji">💴</span><div class="info-text"><strong>Ikura desu ka?</strong>How much is it?</div></li>'
-    +'<li><span class="info-emoji">🚫</span><div class="info-text"><strong>~ wa taberaremasen</strong>I cannot eat ~ (insert ingredient)</div></li>'
-    +'<li><span class="info-emoji">🆘</span><div class="info-text"><strong>Tasukete kudasai!</strong>Please help me!</div></li>'
-    +'<li><span class="info-emoji">🚑</span><div class="info-text"><strong>Kyukyusha wo yonde kudasai</strong>Please call an ambulance</div></li>'
+    +'<li><span class="info-emoji">&#x1F64F;</span><div class="info-text"><strong>Arigatou gozaimasu</strong>Thank you very much</div></li>'
+    +'<li><span class="info-emoji">&#x1F60A;</span><div class="info-text"><strong>Sumimasen</strong>Excuse me / Sorry (most useful word)</div></li>'
+    +'<li><span class="info-emoji">&#x1F37D;&#xFE0F;</span><div class="info-text"><strong>Gochisousama deshita</strong>Thank you for the meal &mdash; always say after dining</div></li>'
+    +'<li><span class="info-emoji">&#x1F6A8;</span><div class="info-text"><strong>Tasukete kudasai!</strong>Please help me!</div></li>'
+    +'<li><span class="info-emoji">&#x1F691;</span><div class="info-text"><strong>Kyukyusha wo yonde kudasai</strong>Please call an ambulance</div></li>'
     +'</ul></div>';
 }
 
@@ -947,11 +900,8 @@ function init(){
   tickClock();
   setInterval(tickClock,1000);
 }
-if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',init);
-}else{
-  init();
-}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
+else{init();}
 
 }());
 </script>
