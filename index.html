@@ -227,6 +227,19 @@
     #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 
+
+    /* ── SCHERRER FEATURED CARD ── */
+    .disc-scherrer{background:linear-gradient(180deg,#0D2847 0%,#142647 100%);color:#f3eee0;border-radius:var(--radius);padding:22px 20px 20px;margin-bottom:14px;position:relative;overflow:hidden;border:1px solid rgba(176,124,34,.2)}
+    .disc-scherrer::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(176,124,34,.2) 0%,transparent 70%);pointer-events:none}
+    .disc-scherrer-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;position:relative}
+    .disc-scherrer-label::before{content:'';width:16px;height:1px;background:var(--gold)}
+    .disc-scherrer-title{font-family:var(--font-serif);font-size:26px;font-weight:300;letter-spacing:-.01em;margin:0 0 4px;color:#f3eee0;position:relative}
+    .disc-scherrer-by{font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--gold);margin-bottom:14px;position:relative}
+    .disc-scherrer-p{font-size:13px;line-height:1.6;color:rgba(243,238,224,.78);margin:0 0 16px;position:relative}
+    .disc-scherrer-cta{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#0D2847;padding:10px 18px;border-radius:99px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;text-decoration:none;position:relative}
+    .disc-scherrer-cta:active{opacity:.85}
+    .disc-scherrer-tip{margin-top:14px;font-size:12.5px;color:rgba(243,238,224,.55);font-style:italic;font-family:var(--font-serif);line-height:1.55;position:relative;padding-left:12px;border-left:1px solid rgba(176,124,34,.3)}
+
     /* ── DISCOVER TAB ── */
     .disc-banner{background:linear-gradient(135deg,#0D2847 0%,#0A2040 55%,#04111F 100%);border-radius:var(--radius);padding:22px 20px 18px;margin-bottom:14px;color:#fff;position:relative;overflow:hidden}
     .disc-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat}
@@ -581,69 +594,67 @@ var VISITED = {
 
 /* ── DISCOVER DATA — Tokyo only (from Rotberg template, curated for Tokyo) ── */
 var DISCOVER_TOKYO=[
-  {cat:'Sightseeing',items:[
-    ['Senso-ji Temple + Asakusa backstreets','Senso-ji Temple Asakusa Tokyo',null],
-    ['Meiji Shrine + Yoyogi Park walk','Meiji Shrine Tokyo',null],
-    ['Nezu Museum (Kengo Kuma design)','Nezu Museum Aoyama Tokyo','Japanese & East Asian art in a serene Kuma building, Aoyama'],
-    ['teamLab Borderless — Azabudai Hills','teamLab Borderless Azabudai Hills Tokyo',null],
-    ['teamLab Planets TOKYO — Toyosu','teamLab Planets Toyosu Tokyo',null],
-    ['Tokyo Tower at sunset','Tokyo Tower',null],
-    ['Shibuya Scramble Crossing','Shibuya Scramble Crossing',null],
-    ['Toyosu Fish Market — dawn atmosphere','Toyosu Fish Market Tokyo','At its most alive between 06:00 and 08:00'],
-    ['Imperial Palace East Gardens','Imperial Palace East Garden Tokyo',null],
-    ['Yayoi Kusama Museum','Yayoi Kusama Museum Shinjuku Tokyo','Advance tickets essential'],
-    ['Daikanyama + Nakameguro canal walk','Meguro River Nakameguro Tokyo',null],
-    ['Kyu Asakura House — 1919 architecture','Kyu Asakura House Daikanyama',null]
-  ]},
-  {cat:'Activities',items:[
-    ['Sakurai Tea Experience','Sakurai Tea Experience Tokyo','Intimate 8-seat counter with 30 green teas'],
-    ['Kappabashi knife shopping + sharpening','Kappabashi knife street Tokyo','Tokyo\'s famous kitchenware district'],
-    ['Kuge Crafts — kintsugi workshop','Kuge Crafts Shin-Koenji Tokyo','Pottery mended with gold-dusted lacquer'],
-    ['Cocktail omakase — Bar Benfiddich','Bar Benfiddich Shinjuku Tokyo',null],
-    ['Tokyo Confidential — sophisticated cocktails','Tokyo Confidential bar Tokyo',null],
-    ['Vinyl listening bars — Shibuya / Ebisu','vinyl bar Shibuya Tokyo',null],
-    ['Architecture tour — Omotesando, Aoyama, Azabudai','Omotesando architecture Tokyo',null],
-    ['Day trip to Kamakura — temples + ocean','Kamakura Japan','~1 hour from Tokyo by train']
-  ]},
-  {cat:'Insider Tables',
-   note:'Personal recommendations from chefs and tastemakers in our network. Not bookings we hold — worth pursuing via Tomoko and Gerhard.',
-   items:[
-    ['Sugita — sushi','Sushi Sugita Tokyo','Frequently ranked among Tokyo\'s very best'],
-    ['Harutaka — Jiro apprentice','Harutaka Ginza Tokyo','Sushi with elevated otsumami · Ginza'],
-    ['Sushi Arai','Sushi Arai Ginza Tokyo',null],
-    ['Tempura Shimomura','Tempura Shimomura Taito Tokyo','Lunch at the counter is best'],
-    ['Tofu Ukai — kaiseki in a garden','Tofu Ukai Tokyo','Tofu kaiseki in a tranquil garden setting'],
-    ['Ishikawa — three-star kaiseki','Ishikawa Kagurazaka Tokyo','Kagurazaka · book well ahead'],
-    ['Ukaitei Omotesando — teppanyaki','Ukaitei Omotesando Tokyo',null]
-  ]},
-  {cat:'Casual & Walk-in',
-   note:'Open-table options for free lunches — no reservations needed.',
-   items:[
-    ['Sunaba Akasaka — neighbourhood soba','Sunaba Akasaka Tokyo','Cold soba + otsumami · near Akasaka'],
-    ['Kanda Yabusoba — Edo-era soba','Kanda Yabusoba Tokyo','Historic counter, ideal for lunch'],
-    ['Ginza Hachigou — refined shoyu ramen','Ginza Hachigou Tokyo','Tabelog 3.81 · online reservation via TableCheck'],
-    ['Tsuta — Michelin shoyu ramen','Tsuta ramen Yoyogi Tokyo','Same-day ticket system · arrive early'],
-    ['Nakiryu — Michelin tantanmen','Nakiryu Toshima Tokyo','Spicy sesame ramen · walk-in only'],
-    ['Shima Steak — wagyu sando','Shima Steak Nihonbashi Tokyo','Charcoal-grilled wagyu sandwich'],
-    ['Seirinkan — legendary wood-fired pizza','Seirinkan Naka-Meguro Tokyo','One of Tokyo\'s great cult institutions']
-  ]},
-  {cat:'Shopping',items:[
-    ['Ginza — Japanese craftsmanship','Ginza Tokyo shopping',null],
-    ['Isetan Shinjuku — depachika food floor','Isetan Shinjuku','The finest department store food hall in the world'],
-    ['Kappabashi kitchen district','Kappabashi Tokyo','Professional knives, ceramics, lacquerware'],
-    ['Nakameguro lifestyle boutiques','Nakameguro Tokyo shopping',null],
-    ['Beams Japan / Visvim / Kapital','Beams Japan Shinjuku',null],
-    ['Itoya Ginza — stationery','Itoya Ginza Tokyo',null],
-    ['Oedo Antique Market','Oedo Antique Market Tokyo','First and third Sundays · Tokyo International Forum'],
-    ['Japanese denim — Daikanyama','Kapital Ebisu Tokyo',null]
-  ]}
+  {
+    cat:'Sightseeing',
+    items:[
+      ['Senso-ji + Asakusa backstreets','Senso-ji Temple Asakusa Tokyo',null],
+      ['Meiji Shrine + Yoyogi Park walk','Meiji Shrine Tokyo',null],
+      ['Nezu Museum \u2014 Kengo Kuma','Nezu Museum Aoyama Tokyo','Japanese + East Asian art in a serene Kuma building, Aoyama'],
+      ['teamLab Borderless','teamLab Borderless Azabudai Hills Tokyo',null],
+      ['teamLab Planets TOKYO','teamLab Planets Toyosu Tokyo',null],
+      ['Tokyo Tower at sunset','Tokyo Tower',null],
+      ['Shibuya Scramble Crossing + rooftop views','Shibuya Scramble Crossing',null],
+      ['Toyosu Market \u2014 dawn fish atmosphere','Toyosu Fish Market Tokyo',null],
+      ['Imperial Palace East Gardens','Imperial Palace East Garden Tokyo','Pre-book the inner gardens for a deeper visit'],
+      ['Yayoi Kusama Museum','Yayoi Kusama Museum Shinjuku Tokyo','Advance tickets essential \u2014 book early'],
+      ['Kyu Asakura House \u2014 preserved 1919 architecture','Kyu Asakura House Daikanyama',null],
+      ['Daikanyama + Nakameguro canal walk','Meguro River Nakameguro Tokyo',null]
+    ]
+  },
+  {
+    cat:'Activities',
+    items:[
+      ['Sakurai Tea Experience \u2014 modern sado','Sakurai Tea Experience Tokyo','Intimate 8-seat counter with 30 green teas'],
+      ['Private sushi-making class','sushi making class Tokyo',null],
+      ['Kuge Crafts \u2014 kintsugi workshop','Kuge Crafts Shin-Koenji Tokyo','Pottery mended with gold-dusted lacquer'],
+      ['Knife shopping + sharpening in Kappabashi','Kappabashi knife street Tokyo',null],
+      ['Cocktail omakase at Bar Benfiddich','Bar Benfiddich Shinjuku Tokyo',null],
+      ['Tokyo Confidential \u2014 sophisticated cocktails','Tokyo Confidential bar Tokyo',null],
+      ['Tokyo Bay sunset cruise \u2014 private charter','Tokyo Bay cruise Symphony','Symphony or Cruise Club Tokyo arrange private bookings'],
+      ['Vinyl listening bars \u2014 Shibuya / Ebisu','vinyl bar Shibuya Tokyo',null],
+      ['Architecture tour \u2014 Omotesando, Aoyama, Azabudai','Omotesando architecture Tokyo',null],
+      ['Day trip to Kamakura \u2014 temples + ocean','Kamakura Japan',null]
+    ]
+  },
+  {
+    cat:'Shopping',
+    items:[
+      ['Ginza luxury \u2014 Japanese craftsmanship focus','Ginza Tokyo shopping',null],
+      ['Isetan Shinjuku depachika food floor','Isetan Shinjuku',null],
+      ['Kappabashi kitchen town','Kappabashi Tokyo',null],
+      ['Nakameguro lifestyle boutiques','Nakameguro Tokyo shopping',null],
+      ['Aesop \u00b7 Visvim \u00b7 Kapital \u00b7 Beams Japan','Beams Japan Shinjuku',null],
+      ['Oedo Antique Market \u2014 twice monthly','Oedo Antique Market Tokyo','First and third Sundays \u00b7 Tokyo International Forum'],
+      ['Vintage watches at Nakano Broadway','Nakano Broadway Tokyo',null],
+      ['Stationery at Itoya Ginza','Itoya Ginza Tokyo',null],
+      ['Japanese denim \u2014 Daikanyama / Harajuku','Kapital Ebisu Tokyo',null]
+    ]
+  }
 ];
 
 function renderDiscover(){
   try{
   var el=document.getElementById('tab-discover');
   if(!el)return;
-  var h='<div class="disc-banner"><h2>&#x1F5FC; Discover Tokyo</h2><p>Sightseeing &middot; Activities &middot; Shopping &middot; Insider tables</p></div>';
+  var h='<div class="disc-banner"><h2>&#x1F5FC; Discover Tokyo</h2><p>Sightseeing &middot; Activities &middot; Insider tables &middot; Shopping</p></div>'
+  +'<div class="disc-scherrer">'
+  +'<div class="disc-scherrer-label">Editor&#x27;s Reference</div>'
+  +'<div class="disc-scherrer-title">The Ultimate Shopping List</div>'
+  +'<div class="disc-scherrer-by">John Scherrer</div>'
+  +'<p class="disc-scherrer-p">An extraordinary, hand-built Google Map of Japan\'s most considered shops &mdash; vintage, design, denim, ceramics, kitchenware, craft. The single best on-the-ground reference for serious shopping in Tokyo.</p>'
+  +'<a class="disc-scherrer-cta" href="https://maps.app.goo.gl/y5dzkZR4L56yY3po8" target="_blank" rel="noopener">Open the Map &rarr;</a>'
+  +'<div class="disc-scherrer-tip">Most powerful when used alongside your live location &mdash; open the map and look for nearby pins wherever the afternoon ends up.</div>'
+  +'</div>';
   DISCOVER_TOKYO.forEach(function(section){
     h+='<div class="disc-card"><div class="disc-card-head"><div class="disc-card-head-title">'+esc(section.cat)+'</div></div><div class="disc-card-body">';
     if(section.note){h+='<div class="disc-note">'+esc(section.note)+'</div>';}
