@@ -189,6 +189,7 @@
     .wish-actions{display:flex;gap:6px;flex-shrink:0}
     .wish-map-btn{padding:7px 11px;border-radius:var(--radius-sm);font-size:11px;font-weight:500;border:1px solid var(--border);background:var(--white);color:var(--ink-2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:3px}
     .wish-divider{height:1px;background:var(--border-lt);margin:0}
+    .wish-border{border-top:1px solid var(--border-lt)}
 
     /* ── VISITED ── */
     .visited-banner{background:linear-gradient(135deg,#1A3A2A 0%,#0D2018 100%);border-radius:var(--radius);padding:22px 20px 18px;margin-bottom:14px;color:#fff;position:relative;overflow:hidden}
@@ -522,28 +523,25 @@ var TRIP = {
   ] /* end days */
 };
 
-/* ── WISH LIST (For 2026/11 from Excel) ── */
-var WISHLIST_TRIP = [
-  { name:'Arai',       style:'Sushi · Priority pursuit', status:'priority', q:'Arai sushi restaurant Tokyo' },
-  { name:'Sushi Ikkou', style:'Sushi · Repeat favourite · Confirmed Tue 10 Nov · 20:30', status:'confirmed', q:'Sushi Ikkou Tokyo' },
-  { name:'Naruse',     style:'Japanese · Confirmed Wed 11 Nov 12:30 · Shizuoka', status:'confirmed', q:'Naruse restaurant Shizuoka' },
-  { name:'Amamoto',    style:'Sushi · Active top priority pursuit', status:'requested', q:'Amamoto sushi Tokyo' },
-  { name:'Sushi Meino',style:'Sushi · Repeat favourite · Confirmed Mon 9 Nov 12:00', status:'confirmed', q:'Sushi Meino Tokyo' },
-  { name:'Sushi Saito',style:'Sushi · Confirmed · 4 seats · Fri 13 Nov 12:00', status:'confirmed', q:'Sushi Saito Tokyo' },
-  { name:'Matsukawa',  style:'Japanese · Major priority pursuit', status:'requested', q:'Matsukawa restaurant Tokyo' },
-  { name:'RestoPizza', style:'Pizza · Suggestion · Thu 12 Nov', status:'suggestion', q:'RestoPizza Tokyo' },
+/* ── WISH LIST — 3 groups ── */
+var WL_CONFIRMED = [
+  { name:'Sushi Meino',  style:'Sushi \u00b7 Mon 9 Nov \u00b7 Lunch 12:00',          q:'Sushi Meino Tokyo' },
+  { name:'Sushi Ikkou',  style:'Sushi \u00b7 Tue 10 Nov \u00b7 Dinner 20:30',        q:'Sushi Ikkou Tokyo' },
+  { name:'Naruse',       style:'Japanese \u00b7 Wed 11 Nov \u00b7 Lunch 12:30 \u00b7 Shizuoka', q:'Naruse restaurant Shizuoka' },
+  { name:'Sushi Saito',  style:'Sushi \u00b7 Fri 13 Nov \u00b7 Lunch 12:00 \u00b7 4 seats', q:'Sushi Saito Tokyo' }
 ];
-var WISHLIST_LONGTERM = [
-  { name:'Matsukawa', style:'Japanese · Multi-course · Highly coveted' },
-  { name:'Saito',     style:'Sushi · Confirmed for this trip' },
-  { name:'Arai',      style:'Sushi · Long-standing priority' },
-  { name:'Torishiki', style:'Yakitori · Legendary counter' },
-  { name:'Ishikawa',  style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
-  { name:'Yoroniku',  style:'Yakiniku · Premium wagyu · Visited 2025' },
-  { name:'Amamoto',   style:'Sushi · Very important active target' },
-  { name:'Sugita',    style:'Sushi · Already visited 2025' },
-  { name:'Shunji',    style:'Japanese · Already visited 2025' },
-  { name:'Kohaku',    style:'Kaiseki · ★★★ Michelin · Kagurazaka' },
+var WL_REQUESTED = [
+  { name:'Arai',        style:'Sushi \u00b7 Active pursuit', q:'Arai sushi restaurant Tokyo' },
+  { name:'Amamoto',     style:'Sushi \u00b7 Active pursuit', q:'Amamoto sushi Tokyo' },
+  { name:'Matsukawa',   style:'Japanese \u00b7 Active pursuit', q:'Matsukawa restaurant Tokyo' }
+];
+var WL_LONGTERM = [
+  { name:'Torishiki',  style:'Yakitori \u00b7 Legendary counter' },
+  { name:'Ishikawa',   style:'Kaiseki \u00b7 \u2605\u2605\u2605 Michelin \u00b7 Kagurazaka' },
+  { name:'Kohaku',     style:'Kaiseki \u00b7 \u2605\u2605\u2605 Michelin \u00b7 Kagurazaka' },
+  { name:'Yoroniku',   style:'Yakiniku \u00b7 Premium wagyu' },
+  { name:'Sugita',     style:'Sushi \u00b7 Visited 2025' },
+  { name:'Shunji',     style:'Japanese \u00b7 Visited 2025' }
 ];
 
 /* ── VISITED (from Excel Visited sheet) ── */
@@ -855,32 +853,39 @@ function renderItinerary(){
 
 /* ── RENDER WISH LIST ── */
 function renderWishlist(){
-  var html='<div class="wishlist-banner"><h2>&#x1F374; Wish List &mdash; Nov 2026</h2><p>Programme targets and long-term priority restaurants</p></div>'
-    +'<div class="section-label">This Trip &mdash; November 2026</div><div class="wish-card">';
-  WISHLIST_TRIP.forEach(function(w,i){
-    if(i>0)html+='<div class="wish-divider"></div>';
-    var stCls=w.status==='confirmed'?'confirmed':w.status==='requested'?'requested':'priority';
-    var stLabel=w.status==='confirmed'?'&#x2713; Confirmed':w.status==='requested'?'Requested':'&#x26A1; Priority';
-    html+='<div class="wish-row">'
+  function rowHTML(w, i, showMap){
+    var mapBtn = showMap && w.q
+      ? '<a href="'+gm(w.q)+'" target="_blank" rel="noopener" class="wish-map-btn">&#x1F4CD;</a>'
+      : '';
+    return '<div class="wish-row'+(i>0?' wish-border':'')+'">'
       +'<div class="wish-num">'+(i+1)+'</div>'
       +'<div class="wish-info"><div class="wish-name">'+esc(w.name)+'</div>'
-      +'<div class="wish-style">'+esc(w.style)+'</div>'
-      +'<span class="wish-status '+stCls+'">'+stLabel+'</span></div>'
-      +'<div class="wish-actions"><a href="'+gm(w.q)+'" target="_blank" rel="noopener" class="wish-map-btn">&#x1F4CD;</a></div>'
-      +'</div>';
-  });
-  html+='</div><div class="section-label">Long-term Priority</div><div class="wish-card">';
-  WISHLIST_LONGTERM.forEach(function(w,i){
-    if(i>0)html+='<div class="wish-divider"></div>';
-    html+='<div class="wish-row">'
-      +'<div class="wish-num" style="background:linear-gradient(135deg,#0D2847,#071B35)">'+(i+1)+'</div>'
-      +'<div class="wish-info"><div class="wish-name">'+esc(w.name)+'</div>'
       +'<div class="wish-style">'+esc(w.style)+'</div></div>'
-      +'<div class="wish-actions"><a href="'+gm(w.name+' restaurant Tokyo')+'" target="_blank" rel="noopener" class="wish-map-btn">&#x1F4CD;</a></div>'
+      +'<div class="wish-actions">'+mapBtn+'</div>'
       +'</div>';
-  });
-  html+='</div>';
-  document.getElementById('tab-wishlist').innerHTML=html;
+  }
+
+  var h = '';
+
+  /* Group 1 — Confirmed */
+  h += '<div class="section-label">&#x2705; Confirmed</div>'
+    + '<div class="wish-card" style="border-color:rgba(27,94,32,.25)">';
+  WL_CONFIRMED.forEach(function(w,i){ h += rowHTML(w, i, true); });
+  h += '</div>';
+
+  /* Group 2 — Requested */
+  h += '<div class="section-label">&#x1F7E1; Active Pursuit</div>'
+    + '<div class="wish-card" style="border-color:rgba(0,77,86,.2)">';
+  WL_REQUESTED.forEach(function(w,i){ h += rowHTML(w, i, true); });
+  h += '</div>';
+
+  /* Group 3 — Long-term Priority */
+  h += '<div class="section-label">&#x1F4CB; Long-term Priority</div>'
+    + '<div class="wish-card">';
+  WL_LONGTERM.forEach(function(w,i){ h += rowHTML(w, i, false); });
+  h += '</div>';
+
+  document.getElementById('tab-wishlist').innerHTML = h;
 }
 
 /* ── RENDER VISITED ── */
