@@ -279,7 +279,7 @@
     <div class="hdr-left">
       <span class="hdr-flag">🗾</span>
       <div>
-        <div class="hdr-dest">Tokyo · November 2026</div>
+        <div class="hdr-dest">Tokyo · November 2026 <span style="font-size:10px;opacity:.6;font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;">v4</span></div>
         <div class="hdr-hc">Happy Camper</div>
       </div>
     </div>
@@ -449,11 +449,11 @@ var TRIP = {
           sub:'Happy Camper selection · details shared closer to travel',
           loc:null, addr:null, q:null,
           notes:'A deliberate counterpoint to the more formal sushi meals — variety in tone and register while remaining fully aligned with the group\'s standards. Details shared closer to travel.', alert:null },
-        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
+        { time:'~19:30', type:'restaurant', badge:'Self-booked', badgeType:'self-booked',
           title:'Dinner',
-          sub:'Not yet confirmed or requested',
+          sub:'Self-booked \u00b7 arranged independently',
           loc:null, addr:null, q:null,
-          notes:'This dinner has not yet been confirmed or requested. Options are being actively developed and will be shared for approval before any reservation is made.', alert:null }
+          notes:'This dinner has been arranged independently by the group.', alert:null }
       ]
     },
 
@@ -470,11 +470,11 @@ var TRIP = {
           loc:'Sushi Saito Tokyo', addr:'Tokyo', q:'Sushi Saito Tokyo',
           notes:'One of the great headline meals of the entire week. Four seats confirmed for Friday 13 November at 12:00. A reservation that reflects both the ambition of the itinerary and the quality of access this programme delivers.',
           alert:'No perfume or fragrance at the counter' },
-        { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
-          title:'Dinner',
-          sub:'Not yet confirmed or requested',
-          loc:null, addr:null, q:null,
-          notes:'Dinner for this evening being pursued. Will be shared for input and approval as the programme develops.', alert:null }
+        { time:'19:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Chez Calvert',
+          sub:'Dinner \u00b7 Confirmed \u00b7 19:30',
+          loc:'Chez Calvert Tokyo', addr:'Tokyo', q:'Chez Calvert Tokyo',
+          notes:'Confirmed dinner on Friday 13 November at 19:30.', alert:null }
       ]
     },
 
@@ -528,7 +528,6 @@ var TRIP = {
 
 /* ── WISH LIST — 3 groups ── */
 var WL_CONFIRMED = [
-  { name:'Sushi Meino',  style:'Sushi \u00b7 Mon 9 Nov \u00b7 Lunch 12:00',          q:'Sushi Meino Tokyo' },
   { name:'Sushi Ikkou',  style:'Sushi \u00b7 Tue 10 Nov \u00b7 Dinner 20:30',        q:'Sushi Ikkou Tokyo' },
   { name:'Naruse',       style:'Japanese \u00b7 Wed 11 Nov \u00b7 Lunch 12:30 \u00b7 Shizuoka', q:'Naruse restaurant Shizuoka' },
   { name:'Sushi Saito',  style:'Sushi \u00b7 Fri 13 Nov \u00b7 Lunch 12:00 \u00b7 4 seats', q:'Sushi Saito Tokyo' }
