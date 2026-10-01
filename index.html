@@ -279,7 +279,7 @@
     <div class="hdr-left">
       <span class="hdr-flag">🗾</span>
       <div>
-        <div class="hdr-dest">Tokyo · November 2026 <span style="font-size:10px;opacity:.6;font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;">v4</span></div>
+        <div class="hdr-dest">Tokyo · November 2026 <span style="font-size:10px;opacity:.6;font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;">v5</span></div>
         <div class="hdr-hc">Happy Camper</div>
       </div>
     </div>
@@ -369,13 +369,13 @@ var TRIP = {
       date:'2026-11-09', dayNum:2, weekday:'Monday, 9 November',
       city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
       hosted:false,
-      notes:'Lunch options are being actively developed and will be confirmed in advance of travel.',
+      notes:'Lunch at Ramen Matsui — a focused, serious ramen counter.',
       stops:[
-        { time:'~12:00', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
-          title:'Lunch',
-          sub:'Not yet confirmed or requested',
-          loc:null, addr:null, q:null,
-          notes:'This lunch has not yet been confirmed or requested. Options are being actively developed and will be shared for approval before any reservation is made.', alert:null },
+        { time:'12:00', type:'restaurant', badge:'Requested', badgeType:'requested',
+          title:'Ramen Matsui',
+          sub:'Ramen',
+          loc:'Ramen Matsui', addr:null, q:'Ramen Matsui Tokyo',
+          notes:'A serious ramen lunch — precise, unfussy, and well-timed between the week\'s grander meals. Reservation requested.', alert:null },
         { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Dinner',
           sub:'Not yet confirmed or requested',
@@ -436,23 +436,23 @@ var TRIP = {
       ]
     },
 
-    /* ── DAY 5 · Thu 12 Nov ── */
+    /* ── DAY 5 · Thu 12 Nov · Hosted · Marumo + Suetomi ── */
     {
       date:'2026-11-12', dayNum:5, weekday:'Thursday, 12 November',
       city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
       hosted:false,
-      notes:'Lunch today is a deliberate counterpoint to the more formal sushi meals — variety in tone and register. Details shared closer to travel.',
+      notes:'Both meals today are arranged independently by the group.',
       stops:[
-        { time:'~12:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
-          title:'Lunch',
-          sub:'Happy Camper selection · details shared closer to travel',
-          loc:null, addr:null, q:null,
-          notes:'A deliberate counterpoint to the more formal sushi meals — variety in tone and register while remaining fully aligned with the group\'s standards. Details shared closer to travel.', alert:null },
-        { time:'~19:30', type:'restaurant', badge:'Self-booked', badgeType:'self-booked',
-          title:'Dinner',
-          sub:'Self-booked \u00b7 arranged independently',
-          loc:null, addr:null, q:null,
-          notes:'This dinner has been arranged independently by the group.', alert:null }
+        { time:'12:00', type:'restaurant', badge:'Self-booked', badgeType:'self-booked',
+          title:'Marumo',
+          sub:'Japanese · arranged independently',
+          loc:'Marumo Tokyo', addr:null, q:'Marumo restaurant Tokyo',
+          notes:'A lunchtime counterpoint to the week\'s sushi-heavy programme — refined Japanese cooking in a more relaxed register.', alert:null },
+        { time:'19:30', type:'restaurant', badge:'Self-booked', badgeType:'self-booked',
+          title:'Suetomi',
+          sub:'Japanese kaiseki · arranged independently',
+          loc:'Suetomi Tokyo', addr:null, q:'Suetomi restaurant Tokyo',
+          notes:'A Wish List placement confirmed for the trip — elegant kaiseki in an intimate setting.', alert:null }
       ]
     },
 
