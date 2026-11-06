@@ -279,7 +279,7 @@
     <div class="hdr-left">
       <span class="hdr-flag">🗾</span>
       <div>
-        <div class="hdr-dest">Tokyo · November 2026 <span style="font-size:10px;opacity:.6;font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;">v6</span></div>
+        <div class="hdr-dest">Tokyo · November 2026 <span style="font-size:10px;opacity:.6;font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;">v7</span></div>
         <div class="hdr-hc">Happy Camper</div>
       </div>
     </div>
@@ -369,13 +369,13 @@ var TRIP = {
       date:'2026-11-09', dayNum:2, weekday:'Monday, 9 November',
       city:'Tokyo', hotel:'Tokyo', hq:'luxury hotel Tokyo',
       hosted:false,
-      notes:'Lunch at Ramen Matsui — a focused, serious ramen counter.',
+      notes:'Ramen Matsui confirmed for lunch at 12:30 (2 pax). Arrive by 12:20 — late arrivals not admitted. Cash only.',
       stops:[
-        { time:'12:30', type:'restaurant', badge:'Requested', badgeType:'requested',
+        { time:'12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Ramen Matsui',
-          sub:'Ramen',
-          loc:'Ramen Matsui', addr:null, q:'Ramen Matsui Tokyo',
-          notes:'2 pax. A serious ramen lunch — precise, unfussy, and well-timed between the week\'s grander meals.', alert:null },
+          sub:'Ramen · Confirmed · 12:30 · 2 pax',
+          loc:'Ramen Matsui', addr:'4-25-10 Yotsuya, Shinjuku, Tokyo', q:'Ramen Matsui Tokyo',
+          notes:'2 pax · Confirmed under Gerhard. A focused, serious ramen counter — precise, unfussy, and well-timed between the week\'s grander meals. Cash only (¥1,000 notes preferred).', alert:'Arrive by 12:20 — late arrivals not admitted · Cash only (¥1,000 notes) · No fragrance · Each guest must order at least one bowl' },
         { time:'~19:30', type:'restaurant', badge:'Not Yet Confirmed', badgeType:'pending',
           title:'Dinner',
           sub:'Not yet confirmed or requested',
@@ -527,6 +527,7 @@ var TRIP = {
 
 /* ── WISH LIST — 3 groups ── */
 var WL_CONFIRMED = [
+  { name:'Ramen Matsui', style:'Ramen · Mon 9 Nov · Lunch 12:30 · 2 pax', q:'Ramen Matsui Tokyo' },
   { name:'Sushi Ikkou',  style:'Sushi \u00b7 Tue 10 Nov \u00b7 Dinner 20:30',        q:'Sushi Ikkou Tokyo' },
   { name:'Naruse',       style:'Japanese \u00b7 Wed 11 Nov \u00b7 Lunch 12:30 \u00b7 Shizuoka', q:'Naruse restaurant Shizuoka' },
   { name:'Sushi Saito',  style:'Sushi \u00b7 Fri 13 Nov \u00b7 Lunch 12:00 \u00b7 4 seats', q:'Sushi Saito Tokyo' }
